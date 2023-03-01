@@ -25,7 +25,7 @@ transition: slide-left
 css: unocss
 ---
 
-# Welcome to Slidev
+# Ask Svelte
 
 Presentation slides for developers
 
@@ -88,7 +88,7 @@ h1 {
 </style>
 
 <!--
-Here is another comment.
+Here is another comment
 -->
 
 ---
