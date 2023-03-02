@@ -78,14 +78,12 @@ url: https://polylingual.dev
 - <carbon-3d-print-mesh /> 使用 OpenAI 創建 Embeddings <!-- Create embeddings using OpenAI -->
 - <carbon-search /> 前端：添加搜索輸入 <!-- Add a search box to the front end -->
 - <carbon-bare-metal-server /> 創建 SvelteKit 後端 API 端點 <!-- Create SvelteKit back-end API endpoint  -->
-  - <carbon-3d-print-mesh /> Create embedding of user's query
-  - <fluent-mdl2-documentation /> Use embeddings to find most relevant documentation sections
-  - <carbon-chat /> Send documentation context and user's question to OpenAI
-  - <fluent-stream-output-20-regular /> Stream answer back to user
-- <mdi-message-text-fast-outline /> Display answer in the front-end
-- <logos-firebase/> Secure with Firebase Auth
-  <!-- - Create a Firebase Project
-  - Add multilingual Firebase Auth to a SvelteKit web app using SvelteFireTS -->
+  - <carbon-3d-print-mesh /> 創建用戶問題的 Embedding <!-- Create embedding of user's query -->
+  - <fluent-mdl2-documentation /> 使用 Embeddings 來查找最相關的文檔部分 <!-- Use embeddings to find most relevant documentation sections -->
+  - <carbon-chat /> 將相關文檔和用戶問題發送給 OpenAI <!-- Send relevant documentation and user's question to OpenAI -->
+  - <fluent-stream-output-20-regular /> 將答案流式傳輸給用戶 <!-- Stream answer back to user -->
+- <mdi-message-text-fast-outline /> 顯示答案 <!--Show answer-->
+- <logos-firebase/> 使用 Firebase Auth 保護您的 API <!-- Secure your API with Firebase Auth -->
 
 ---
 src: ./pages/preprocess.md
@@ -96,16 +94,22 @@ src: ./pages/create-embeddings.md
 ---
 
 ---
-src: ./pages/search-box.md
----
-
----
-src: ./pages/search-box.md
----
-
----
 
 # What is an embedding?
+
+Explain if time
+
+---
+src: ./pages/search-box.md
+---
+
+---
+src: ./pages/api-endpoint.md
+---
+
+---
+src: ./pages/secure-with-firebase.md
+---
 
 ---
 
@@ -133,91 +137,25 @@ src: ./pages/search-box.md
 
 ---
 
+# 有問題嗎?
+
+---
+layout: iframe-right
+url: https://polylingual.dev
+---
+
+# 有問題嗎?
+
+- Want to try it out?
+
+<div mb-10 />
+
 # 聯繫我
 
-- <logos-facebook/> [了解 JavaScript 高雄社團](https://www.facebook.com/groups/liaojiejavascript)
-  - 每週一晚上七點到九點我們開會。
 - <logos-twitter/> [@jacobbowdoin](https://twitter.com/jacobbowdoin)
+- <logos-facebook/> [了解 JavaScript 高雄社團](https://www.facebook.com/groups/liaojiejavascript): 每週一晚上七點到九點我們開會。
 
-<!-- [Showcases](https://sli.dev/showcases.html) -->
+<img ml-6 mt-4 w-180px border="rounded" src="/facebook-qr.png">
 
----
-
-# Components
-
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
-
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
-<!--
-Presenter note with **bold**, *italic*, and ~~striked~~ text.
-
-Also, HTML elements are valid:
-<div class="flex w-full">
-  <span style="flex-grow: 1;">Left content</span>
-  <span>Right content</span>
-</div>
--->
-
----
-
-# Diagrams
-
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-3 gap-10 pt-4 -mb-6">
-
-```mermaid {scale: 0.5}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-```plantuml {scale: 0.7}
-@startuml
-
-package "Some Group" {
-  HTTP - [First Component]
-  [Another Component]
-}
-
-node "Other Groups" {
-  FTP - [Second Component]
-  [First Component] --> FTP
-}
-
-cloud {
-  [Example 1]
-}
-
-
-database "MySql" {
-  folder "This is my folder" {
-    [Folder 3]
-  }
-  frame "Foo" {
-    [Frame 4]
-  }
-}
-
-
-[Another Component] --> [Example 1]
-[Example 1] --> [Folder 3]
-[Folder 3] --> [Frame 4]
-
-@enduml
-```
-
-</div>
-
-[Learn More](https://sli.dev/guide/syntax.html#diagrams)
 
 ---
