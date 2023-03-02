@@ -27,9 +27,9 @@ css: unocss
 </div>
 
 <div class="abs-br m-6 flex gap-2">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
+  <!-- <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
     <carbon:edit />
-  </button>
+  </button> -->
   <a href="https://github.com/jacob-8/ask-svelte-presentation" target="_blank" alt="GitHub"
     class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
     <carbon-logo-github />
@@ -45,7 +45,9 @@ css: unocss
 
 # 搜索演示
 
-<img m="t-15" border="rounded" src="/images/favorite-zh.png">
+<img m="y-10" border="rounded" src="/images/favorite-zh.png">
+
+[polylingual.dev/zh-TW/search](https://polylingual.dev/zh-TW/search)
 
 ---
 layout: iframe-right
@@ -59,13 +61,13 @@ url: https://polylingual.dev
 - 🤹 **任何語言** - 它將使用相同的語言回复
 <!-- - 📖 -->
 
-95+ 語言: <span class="text-blue">**繁體中文**</span>、簡體中文、英語、日語、韓語、印度尼西亞語、西班牙語、法語、德語、阿拉伯語、荷蘭語、越南語、泰語、阿爾巴尼亞語、亞美尼亞語、阿瓦迪語、阿塞拜疆語、巴什基爾語、巴斯克語、白俄羅斯語、孟加拉語、博傑普爾語、波斯尼亞語、巴西語 葡萄牙語、保加利亞語、加泰羅尼亞語、恰蒂斯加爾希語、克羅地亞語、捷克語、丹麥語、多格里語、愛沙尼亞語、法羅語、芬蘭語、加利西亞語、格魯吉亞語、希臘語、古吉拉特語、哈里亞納語、印地語、匈牙利語、愛爾蘭語、意大利語、爪哇語、卡納達語、克什米爾語、哈薩克語、孔卡尼語、 吉爾吉斯語、拉脫維亞語、立陶宛語、馬其頓語、邁蒂利語、馬來語、馬耳他語、馬拉地語、馬爾瓦里語、閩南語、摩爾多瓦語、蒙古語、黑山語、尼泊爾語、挪威語、奧里亞語、普什圖語、波斯語（波斯語）、波蘭語、葡萄牙語、旁遮普語、拉賈斯坦語、羅馬尼亞語、 俄語、梵語、桑塔利語、塞爾維亞語、信德語、僧伽羅語、斯洛伐克語、斯洛文尼亞語、斯洛文尼亞語、斯瓦希里語、瑞典語、塔吉克語、泰米爾語、韃靼語、泰盧固語、土耳其語、土庫曼語、烏克蘭語、烏爾都語、烏茲別克語、威爾士語、廣東話、吳語
+95+ 語言: <span class="text-blue">**繁體中文**</span>、簡體中文、英語、日語、韓語、印度尼西亞語、西班牙語、法語、德語、阿拉伯語、荷蘭語、越南語、泰語、阿爾巴尼亞語、亞美尼亞語、阿瓦迪語、阿塞拜疆語、巴什基爾語、巴斯克語、白俄羅斯語、孟加拉語、博傑普爾語、波斯尼亞語、巴西語 葡萄牙語、保加利亞語、加泰羅尼亞語、恰蒂斯加爾希語、克羅地亞語、捷克語、丹麥語、多格里語、愛沙尼亞語、法羅語、芬蘭語、加利西亞語、格魯吉亞語、希臘語、古吉拉特語、哈里亞納語、印地語、匈牙利語、愛爾蘭語、意大利語、爪哇語、卡納達語、克什米爾語、邁蒂利語、馬來語、廣東話、吳語、等
 
 <!-- Source: https://seo.ai/blog/how-many-languages-does-chatgpt-support -->
 
 ---
 
-## Use Cases
+# Use Cases
 
 Create a highly proficient chat assistant for your:
 
@@ -93,26 +95,35 @@ Create a highly proficient chat assistant for your:
 
 ---
 
-# Future Tasks
+# 未來的任務
 
-- Save chats to Firestore
-- Cache responses to common questions
-- Meter usage if it's a public endpoint
-- If your knowledge base is large you could use [Google Cloud Matching Engine Vertex AI](https://github.com/groovenauts/MatchItFast/) or the offerings suggested by OpenAI
+- <logos-firebase/> 將問題和答案保存到 Firestore
+- 計數使用
+- 如果您的知識庫很大並且您想快速檢索最相關的文檔部分，您可以使用 [Google Cloud Matching Engine Vertex AI](https://cloud.google.com/blog/topics/developers-practitioners/find-anything-blazingly-fast-googles-vector-search-technology) 或任何 [OpenAI 建議的矢量數據庫](https://platform.openai.com/docs/guides/embeddings/how-can-i-retrieve-k-nearest-embedding-vectors-quickly)
+
+<!-- This will allow users to view their history and you can provide cached answers to nearly identical questions. -->
 
 ---
-# Links for learning more
-- https://cloud.google.com/blog/topics/developers-practitioners/find-anything-blazingly-fast-googles-vector-search-technology
-- https://cloud.google.com/vertex-ai/docs/matching-engine/overview
-- https://nnext.ai/wiki/Visualizing-ChatGPT-embeddings-2ecbf1423280479fa6f303c3343a49a1
-- https://towardsdatascience.com/using-approximate-nearest-neighbor-search-in-real-world-applications-a75c351445d
-- https://platform.openai.com/docs/guides/embeddings/what-are-embeddings
-- https://openai.com/blog/introducing-text-and-code-embeddings/
-- https://observablehq.com/@asg017/introducing-sqlite-vss
+
+# 了解更多
+
+- <carbon-logo-github /> 查看源代碼: [**polylingual.dev**](https://github.com/jacob-8/polylingual.dev)
+<br />
+
+- [OpenAI Introducing text and code embeddings](https://openai.com/blog/introducing-text-and-code-embeddings/), [OpenAI Emebeddings Documentation](https://platform.openai.com/docs/guides/embeddings/what-are-embeddings)
+- [Storing OpenAI embeddings in Postgres with pgvector](https://supabase.com/blog/openai-embeddings-postgres-vector), [Supabase Clippy: ChatGPT for Supabase Docs](https://supabase.com/blog/chatgpt-supabase-docs)
+- [Nearest Neighbor Search](https://towardsdatascience.com/using-approximate-nearest-neighbor-search-in-real-world-applications-a75c351445d)
+- [Vertex AI Matching Engine overview](https://cloud.google.com/vertex-ai/docs/matching-engine/overview)
+- [Visualize Embeddings](https://nnext.ai/wiki/Visualizing-ChatGPT-embeddings-2ecbf1423280479fa6f303c3343a49a1)
+- [sqlite-vss: A SQLite Extension for Vector Search](https://observablehq.com/@asg017/introducing-sqlite-vss)
 
 ---
 
 # 聯繫我
+
+- <logos-facebook/> [了解 JavaScript 高雄社團](https://www.facebook.com/groups/liaojiejavascript)
+  - 每週一晚上七點到九點我們開會。
+- <logos-twitter/> [@jacobbowdoin](https://twitter.com/jacobbowdoin)
 
 ---
 layout: image-right
