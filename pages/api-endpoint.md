@@ -8,7 +8,7 @@
 // src/routes/api/query/+server.ts
 const MAX_DOCS_TO_RETURN = 15;
 export const POST: RequestHandler = async ({ request, fetch }) => {
-  const { query, auth_token } = await request.json()
+  const { query } = await request.json()
   const query_embedding = await generate_embedding(query)
   const doc_sections = await load_doc_sections('sveltejs.kit/docs.csv', fetch)
   const nearest_matches = find_closest_embeddings_cosine(query_embedding, doc_sections, MAX_DOCS_TO_RETURN)

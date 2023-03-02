@@ -6,3 +6,7 @@
 /* .slidev-code .line.highlighted {
   background: rgba(0,0,0,100%);
 } */
+
+.select-none {
+  user-select: unset !important;
+}

@@ -146,7 +146,7 @@ url: https://polylingual.dev
 
 # 有問題嗎?
 
-- Want to try it out?
+- 要不要試試看? <!-- Want to try it out? -->
 
 <div mb-10 />
 
@@ -156,6 +156,5 @@ url: https://polylingual.dev
 - <logos-facebook/> [了解 JavaScript 高雄社團](https://www.facebook.com/groups/liaojiejavascript): 每週一晚上七點到九點我們開會。
 
 <img ml-6 mt-4 w-180px border="rounded" src="/facebook-qr.png">
-
 
 ---
