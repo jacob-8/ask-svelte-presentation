@@ -1,0 +1,8 @@
+.slidev-code .line.dishonored {
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
+
+/* .slidev-code .line.highlighted {
+  background: rgba(0,0,0,100%);
+} */

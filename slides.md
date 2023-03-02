@@ -1,11 +1,9 @@
 ---
 theme: seriph
-# selected from a curated Unsplash collection by Anthony https://unsplash.com/collections/94734566/slidev
-background: https://source.unsplash.com/fVBWN3_ST0E/1920x1080
+background: https://source.unsplash.com/fVBWN3_ST0E/1920x1080 # selected from a curated Unsplash collection by Anthony https://unsplash.com/collections/94734566/slidev
 class: 'text-center'
-# https://sli.dev/custom/highlighters.html
 highlighter: shiki
-lineNumbers: false
+lineNumbers: true
 info: |
   ## Ask Svelte Presentation for March 2023 TOOCON
 drawings:
@@ -27,10 +25,7 @@ css: unocss
 </div>
 
 <div class="abs-br m-6 flex gap-2">
-  <!-- <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon:edit />
-  </button> -->
-  <a href="https://github.com/jacob-8/ask-svelte-presentation" target="_blank" alt="GitHub"
+  <a href="https://github.com/jacob-8/ask-svelte-presentation" target="_blank" title="GitHub"
     class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
     <carbon-logo-github />
   </a>
@@ -38,14 +33,14 @@ css: unocss
 
 <!--
 了解我如何使用 OpenAI 和 SvelteKit 為 Svelte 文檔站點構建類似 ChatGPT 的多語言對話搜索。
-了解我如何使用 Firebase Auth 保護我的 API，並獲得一些關於如何使用 Firebase 為您自己或您的公司創建多語言搜索工具的想法。 https://sli.dev/guide/syntax.html#notes
+了解我如何使用 Firebase Auth 保護我的 API，並獲得一些關於如何使用 Firebase 為您自己或您的公司創建多語言搜索工具的想法。
 -->
 
 ---
 
 # 搜索演示
 
-<img m="y-10" border="rounded" src="/images/favorite-zh.png">
+<img m="y-10" border="rounded" src="/favorite-zh.png">
 
 [polylingual.dev/zh-TW/search](https://polylingual.dev/zh-TW/search)
 
@@ -54,11 +49,11 @@ layout: iframe-right
 url: https://polylingual.dev
 ---
 
-# 搜索演示
+# 搜索演示 <!-- Search Demo -->
 
-- <logos-svelte-icon /> **搜索知識庫** - 搜索 Svelte 官方文檔
-- 🤖 **使用 AI** - 使用 OpenAI GPT-3
-- 🤹 **任何語言** - 它將使用相同的語言回复
+- <logos-svelte-icon /> **搜索知識庫** - 搜索 Svelte 官方文檔  <!-- **Search Knowledge Base** - Search Svelte Official Documentation -->
+- 🤖 **AI** - 使用 OpenAI ChatGPT-3.5 <!-- **AI** - Use OpenAI ChatGPT-3.5  -->
+- 🤹 **任何語言** - 它將使用相同的語言回复 <!-- **Any Language** - It will reply using the same language of the question -->
 <!-- - 📖 -->
 
 95+ 語言: <span class="text-blue">**繁體中文**</span>、簡體中文、英語、日語、韓語、印度尼西亞語、西班牙語、法語、德語、阿拉伯語、荷蘭語、越南語、泰語、阿爾巴尼亞語、亞美尼亞語、阿瓦迪語、阿塞拜疆語、巴什基爾語、巴斯克語、白俄羅斯語、孟加拉語、博傑普爾語、波斯尼亞語、巴西語 葡萄牙語、保加利亞語、加泰羅尼亞語、恰蒂斯加爾希語、克羅地亞語、捷克語、丹麥語、多格里語、愛沙尼亞語、法羅語、芬蘭語、加利西亞語、格魯吉亞語、希臘語、古吉拉特語、哈里亞納語、印地語、匈牙利語、愛爾蘭語、意大利語、爪哇語、卡納達語、克什米爾語、邁蒂利語、馬來語、廣東話、吳語、等
@@ -67,22 +62,22 @@ url: https://polylingual.dev
 
 ---
 
-# Use Cases
+# 用例 <!-- Use Cases -->
 
-Create a highly proficient chat assistant for your:
+創建一個非常厲害的聊天助手： <!-- Create a highly proficient chat assistant for your: -->
 
-- company internal knowledge base
-- product documentation
-- personal knowledge base
+- 公司內部知識庫 <!-- company internal knowledge base -->
+- 產品文檔 <!-- product documentation -->
+- 個人知識庫 <!-- personal knowledge base -->
 
 ---
 
 # 怎麼構建知識庫搜索
 
-- <clarity-process-on-vm-line inline /> Preprocess Knowledge Base and Create Embeddings using OpenAI
-- <carbon-search /> Receive search query from the user
-  <!-- - This will send a query to our backend and listen for answers -->
-- <carbon-bare-metal-server /> Create SvelteKit back-end API endpoint 
+- <clarity-process-on-vm-line inline /> 將知識庫預處理成小部分 <!-- Preprocess knowledge base into small sections -->
+- <carbon-3d-print-mesh /> 使用 OpenAI 創建 Embeddings <!-- Create embeddings using OpenAI -->
+- <carbon-search /> 前端：添加搜索輸入 <!-- Add a search box to the front end -->
+- <carbon-bare-metal-server /> 創建 SvelteKit 後端 API 端點 <!-- Create SvelteKit back-end API endpoint  -->
   - <carbon-3d-print-mesh /> Create embedding of user's query
   - <fluent-mdl2-documentation /> Use embeddings to find most relevant documentation sections
   - <carbon-chat /> Send documentation context and user's question to OpenAI
@@ -92,6 +87,25 @@ Create a highly proficient chat assistant for your:
   <!-- - Create a Firebase Project
   - Add multilingual Firebase Auth to a SvelteKit web app using SvelteFireTS -->
 
+---
+src: ./pages/preprocess.md
+---
+
+---
+src: ./pages/create-embeddings.md
+---
+
+---
+src: ./pages/search-box.md
+---
+
+---
+src: ./pages/search-box.md
+---
+
+---
+
+# What is an embedding?
 
 ---
 
@@ -125,77 +139,16 @@ Create a highly proficient chat assistant for your:
   - 每週一晚上七點到九點我們開會。
 - <logos-twitter/> [@jacobbowdoin](https://twitter.com/jacobbowdoin)
 
----
-layout: image-right
-image: https://source.unsplash.com/collection/94734566/1920x1080
----
-
-# Code
-
-Use code snippets and get the highlighting directly![^1]
-
-```ts {all|2|1-6|9|all}
-interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
-}
-
-function updateUser(id: number, update: User) {
-  const user = getUser(id)
-  const newUser = { ...user, ...update }
-  saveUser(id, newUser)
-}
-```
-
-<arrow v-click="3" x1="400" y1="420" x2="230" y2="330" color="#564" width="3" arrowSize="1" />
-
-[^1]: [Learn More](https://sli.dev/guide/syntax.html#line-highlighting)
-
-<style>
-.footnotes-sep {
-  @apply mt-20 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
+<!-- [Showcases](https://sli.dev/showcases.html) -->
 
 ---
 
 # Components
 
-<div grid="~ cols-2 gap-4">
-<div>
-
-You can use Vue components directly inside your slides.
-
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
-
-```html
-<Counter :count="10" />
-```
-
 <!-- ./components/Counter.vue -->
 <Counter :count="10" m="t-4" />
 
 Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
-</div>
 
 <!--
 Presenter note with **bold**, *italic*, and ~~striked~~ text.
@@ -206,142 +159,6 @@ Also, HTML elements are valid:
   <span>Right content</span>
 </div>
 -->
-
-
----
-class: px-20
----
-
-# Themes
-
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
-
-<div grid="~ cols-2 gap-2" m="-t-2">
-
-```yaml
----
-theme: default
----
-```
-
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true">
-
-</div>
-
-Read more about [How to use a theme](https://sli.dev/themes/use.html) and
-check out the [Awesome Themes Gallery](https://sli.dev/themes/gallery.html).
-
----
-preload: false
----
-
-# Animations
-
-Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
-
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }">
-  Slidev
-</div>
-```
-
-<div class="w-60 relative mt-6">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-square.png"
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-circle.png"
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-triangle.png"
-    />
-  </div>
-
-  <div
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
-
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
-
-<div
-  v-motion
-  :initial="{ x:35, y: 40, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-
-[Learn More](https://sli.dev/guide/animations.html#motion)
-
-</div>
-
----
-
-# LaTeX
-
-LaTeX is supported out-of-box powered by [KaTeX](https://katex.org/).
-
-<br>
-
-Inline $\sqrt{3x-1}+(1+x)^2$
-
-Block
-$$
-\begin{array}{c}
-
-\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
-= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
-
-\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
-
-\nabla \cdot \vec{\mathbf{B}} & = 0
-
-\end{array}
-$$
-
-<br>
-
-[Learn more](https://sli.dev/guide/syntax#latex)
 
 ---
 
@@ -404,15 +221,3 @@ database "MySql" {
 [Learn More](https://sli.dev/guide/syntax.html#diagrams)
 
 ---
-src: ./pages/multiple-entries.md
-hide: false
----
-
----
-layout: center
-class: text-center
----
-
-# Learn More
-
-[Documentations](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/showcases.html)
