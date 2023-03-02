@@ -11,5 +11,12 @@
     "@slidev/cli": "^0.40.3",
     "@slidev/theme-default": "*",
     "@slidev/theme-seriph": "*"
+  },
+  "devDependencies": {
+    "@iconify-json/clarity": "^1.1.8",
+    "@iconify-json/fluent": "^1.1.18",
+    "@iconify-json/fluent-mdl2": "^1.1.1",
+    "@iconify-json/logos": "^1.1.23",
+    "@iconify-json/mdi": "^1.1.48"
   }
 }

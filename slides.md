@@ -1,22 +1,16 @@
 ---
-# try also 'default' to start simple
 theme: seriph
 # selected from a curated Unsplash collection by Anthony https://unsplash.com/collections/94734566/slidev
 background: https://source.unsplash.com/fVBWN3_ST0E/1920x1080
-# apply any windi css classes to the current slide
 class: 'text-center'
 # https://sli.dev/custom/highlighters.html
 highlighter: shiki
-# show line numbers in code blocks
 lineNumbers: false
-# some information about the slides, markdown enabled
 info: |
   ## Ask Svelte Presentation for March 2023 TOOCON
-# persist drawings in exports and build
 drawings:
   persist: false
-# page transition
-transition: fade-out
+# transition: fade-out
 css: unocss
 ---
 
@@ -48,85 +42,77 @@ css: unocss
 -->
 
 ---
----
 
 # 搜索演示
 
 <img m="t-15" border="rounded" src="/images/favorite-zh.png">
 
-
-
 ---
 layout: iframe-right
-
 url: https://polylingual.dev
 ---
 
 # 搜索演示
 
-- 📖 **搜索知識庫** - 搜索 Svelte 官方文檔
+- <logos-svelte-icon /> **搜索知識庫** - 搜索 Svelte 官方文檔
 - 🤖 **使用 AI** - 使用 OpenAI GPT-3
 - 🤹 **任何語言** - 它將使用相同的語言回复
+<!-- - 📖 -->
 
 95+ 語言: <span class="text-blue">**繁體中文**</span>、簡體中文、英語、日語、韓語、印度尼西亞語、西班牙語、法語、德語、阿拉伯語、荷蘭語、越南語、泰語、阿爾巴尼亞語、亞美尼亞語、阿瓦迪語、阿塞拜疆語、巴什基爾語、巴斯克語、白俄羅斯語、孟加拉語、博傑普爾語、波斯尼亞語、巴西語 葡萄牙語、保加利亞語、加泰羅尼亞語、恰蒂斯加爾希語、克羅地亞語、捷克語、丹麥語、多格里語、愛沙尼亞語、法羅語、芬蘭語、加利西亞語、格魯吉亞語、希臘語、古吉拉特語、哈里亞納語、印地語、匈牙利語、愛爾蘭語、意大利語、爪哇語、卡納達語、克什米爾語、哈薩克語、孔卡尼語、 吉爾吉斯語、拉脫維亞語、立陶宛語、馬其頓語、邁蒂利語、馬來語、馬耳他語、馬拉地語、馬爾瓦里語、閩南語、摩爾多瓦語、蒙古語、黑山語、尼泊爾語、挪威語、奧里亞語、普什圖語、波斯語（波斯語）、波蘭語、葡萄牙語、旁遮普語、拉賈斯坦語、羅馬尼亞語、 俄語、梵語、桑塔利語、塞爾維亞語、信德語、僧伽羅語、斯洛伐克語、斯洛文尼亞語、斯洛文尼亞語、斯瓦希里語、瑞典語、塔吉克語、泰米爾語、韃靼語、泰盧固語、土耳其語、土庫曼語、烏克蘭語、烏爾都語、烏茲別克語、威爾士語、廣東話、吳語
 
-
-
-<!-- https://seo.ai/blog/how-many-languages-does-chatgpt-support -->
+<!-- Source: https://seo.ai/blog/how-many-languages-does-chatgpt-support -->
 
 ---
----
 
+## Use Cases
 
-<br>
-<br>
+Create a highly proficient chat assistant for your:
 
-Read more about [Why Slidev?](https://sli.dev/guide/why)
-
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/guide/syntax#embedded-styles
--->
-
-<style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-</style>
-
-<!--
-Here is another comment
--->
+- company internal knowledge base
+- product documentation
+- personal knowledge base
 
 ---
+
+# 怎麼構建知識庫搜索
+
+- <clarity-process-on-vm-line inline /> Preprocess Knowledge Base and Create Embeddings using OpenAI
+- <carbon-search /> Receive search query from the user
+  <!-- - This will send a query to our backend and listen for answers -->
+- <carbon-bare-metal-server /> Create SvelteKit back-end API endpoint 
+  - <carbon-3d-print-mesh /> Create embedding of user's query
+  - <fluent-mdl2-documentation /> Use embeddings to find most relevant documentation sections
+  - <carbon-chat /> Send documentation context and user's question to OpenAI
+  - <fluent-stream-output-20-regular /> Stream answer back to user
+- <mdi-message-text-fast-outline /> Display answer in the front-end
+- <logos-firebase/> Secure with Firebase Auth
+  <!-- - Create a Firebase Project
+  - Add multilingual Firebase Auth to a SvelteKit web app using SvelteFireTS -->
+
+
 ---
 
-# Navigation
+# Future Tasks
 
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
+- Save chats to Firestore
+- Cache responses to common questions
+- Meter usage if it's a public endpoint
+- If your knowledge base is large you could use [Google Cloud Matching Engine Vertex AI](https://github.com/groovenauts/MatchItFast/) or the offerings suggested by OpenAI
 
-### Keyboard Shortcuts
+---
+# Links for learning more
+- https://cloud.google.com/blog/topics/developers-practitioners/find-anything-blazingly-fast-googles-vector-search-technology
+- https://cloud.google.com/vertex-ai/docs/matching-engine/overview
+- https://nnext.ai/wiki/Visualizing-ChatGPT-embeddings-2ecbf1423280479fa6f303c3343a49a1
+- https://towardsdatascience.com/using-approximate-nearest-neighbor-search-in-real-world-applications-a75c351445d
+- https://platform.openai.com/docs/guides/embeddings/what-are-embeddings
+- https://openai.com/blog/introducing-text-and-code-embeddings/
+- https://observablehq.com/@asg017/introducing-sqlite-vss
 
-|                                                     |                             |
-| --------------------------------------------------- | --------------------------- |
-| <kbd>right</kbd> / <kbd>space</kbd>                 | next animation or slide     |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd>                                       | previous slide              |
-| <kbd>down</kbd>                                     | next slide                  |
+---
 
-<!-- https://sli.dev/guide/animations.html#click-animations -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
+# 聯繫我
 
 ---
 layout: image-right
