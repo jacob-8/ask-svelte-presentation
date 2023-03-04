@@ -1,6 +1,6 @@
 ---
 theme: seriph
-background: https://source.unsplash.com/fVBWN3_ST0E/1920x1080 # selected from a curated Unsplash collection by Anthony https://unsplash.com/collections/94734566/slidev
+background: https://source.unsplash.com/fVBWN3_ST0E/1920x1080
 class: 'text-center'
 highlighter: shiki
 lineNumbers: false
@@ -11,14 +11,13 @@ drawings:
 css: unocss
 ---
 
-# 問 Svelte
+# 問 Svelte <!-- Ask Svelte -->
 
-使用 AI 以任何語言搜索知識庫
+使用 AI 以任何語言搜索知識庫 <!-- Use AI to search a knowledge knowledge using any language -->
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    按空格鍵下一頁
-    <!-- Press Space for next page  -->
+    按空格鍵下一頁 <!-- Press Space for next page  -->
     <carbon:arrow-right class="inline"/>
   </span>
 </div>
@@ -54,8 +53,7 @@ TODO: Picture of SvelteKit page alongside pic of answer pulled from that page.
 
 [polylingual.dev/zh-TW/search](https://polylingual.dev/zh-TW/search)
 
-<!-- 首先，我會展示我構建的聰明的搜索引擎，然後如何構建它。Svelte 是一個
-JavaScript 框架，還有你可以利用 SvelteKit 做厲害的 web 應用程序。 好像 NextJS。 那 SvelteKit 沒有中文的文檔。 翻譯文檔很難，因為內容常常變化。 這不再是問題。 使用我的工具，我們可以獲取英文文檔，用中文提出問題，然後得到有用的中文回答。 -->
+<!-- 首先，我會展示我構建的聰明的搜索引擎，然後如何構建它。Svelte 是一個 JavaScript 框架，還有你可以利用 SvelteKit 做厲害的 web 應用程序。 好像 NextJS。 那 SvelteKit 沒有中文的文檔。 翻譯文檔很難，因為內容常常變化。 這不再是問題。 使用我的工具，我們可以獲取英文文檔，用中文提出問題，然後得到有用的中文回答。 -->
 
 ---
 layout: iframe-right
@@ -67,7 +65,6 @@ url: https://polylingual.dev
 - <logos-svelte-icon /> **搜索知識庫** - 搜索 Svelte 官方文檔  <!-- **Search Knowledge Base** - Search Svelte Official Documentation -->
 - 🤖 **AI** - 使用 OpenAI ChatGPT-3.5 <!-- **AI** - Use OpenAI ChatGPT-3.5  -->
 - 🤹 **任何語言** - 它將使用相同的語言回复 <!-- **Any Language** - It will reply using the same language of the question -->
-<!-- - 📖 -->
 
 95+ 語言: <span class="text-blue">**繁體中文**</span>、簡體中文、英語、日語、韓語、印度尼西亞語、西班牙語、法語、德語、阿拉伯語、荷蘭語、越南語、泰語、阿爾巴尼亞語、亞美尼亞語、阿瓦迪語、阿塞拜疆語、巴什基爾語、巴斯克語、白俄羅斯語、孟加拉語、博傑普爾語、波斯尼亞語、巴西語 葡萄牙語、保加利亞語、加泰羅尼亞語、恰蒂斯加爾希語、克羅地亞語、捷克語、丹麥語、多格里語、愛沙尼亞語、法羅語、芬蘭語、加利西亞語、格魯吉亞語、希臘語、古吉拉特語、哈里亞納語、印地語、匈牙利語、愛爾蘭語、意大利語、爪哇語、卡納達語、克什米爾語、邁蒂利語、馬來語、廣東話、吳語、等
 
@@ -197,7 +194,7 @@ li {
 - [Perform Semantic Search on a Postgres database](https://nnext.ai/wiki/Introducing-pgvector---Perform-Semantic-Search-on-a-Postgres-database-e114fca6811c4583a6d516eca80ff42b)
 - [sqlite-vss: A SQLite Extension for Vector Search](https://observablehq.com/@asg017/introducing-sqlite-vss)
 
-<!-- Now that you've seen how the multilingual ChatGPT like search works, when you have time I hope you will take some time to explore the source code and try things out for yourself. 我會在 TOOCON Facebook 頁面上發布這個 Slidev PPT，你可以用這些鏈接查看我的項目的源代碼或閱讀這些有用的文章。 -->
+<!-- 那, 因為你了解了搜索工具，當你有空，我希望你能花一些時間來探索源代碼和親自試試一下。 我會在 TOOCON Facebook 頁面上發布這個 Slidev PPT，你可以用這些鏈接查看我的項目的源代碼或閱讀這些有用的文章。 -->
 
 ---
 
@@ -221,7 +218,7 @@ url: https://polylingual.dev
 
 <img ml-12 mt-4 w-180px border="rounded" src="/facebook-qr.png">
 
-<!-- Scan the QR Code to go to our Facebook community page and you'll see a discussion post where you can add a question in Chinese, then I'll paste it in here.
+<!-- 掃描 QR code 進入我的 Facebook 社團。你會看到一個討論帖子，請你把你的問題放在那邊(用中文)。然後我會把你的問題放在這個輸入。問 SvelteKit.
 
 liánxì -->
 

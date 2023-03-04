@@ -18,7 +18,13 @@ async function generate_embedding(text: string): Promise<number[]> {
 ```
 
 <!--
+1. 使用你的 API 密鑰初始化 OpenAIApi
+2. 把字符串 (zìfú chuàn) 發送到 OpenAI
+3. 接收矢量數據, OpenAI 的矢量數據有 1536 個維度
+- 請注意，這些代碼示例沒有導入和錯誤捕獲，讓我比較容易給大家解釋，但然後請閱讀源代碼, 它有導入和錯誤捕獲。
+
 1. Init OpenAIApi using your API key
-2. Send the text to OpenAI
+2. Send the string to OpenAI
 3. Receive back the embedding, an array with values between -1 and 1 for each of the 1536 dimensions that OpenAI uses in their embeddings.
-- Note that I've left out all imports and error catching in my code samples to make it easier to display on screen and explain, but please read the source code to find the imports and make sure to catch errors.  -->
+- Note that I've left out all imports and error catching in my code samples to make it easier to display on screen and explain, but please read the source code to find the imports and make sure to catch errors.  
+-->

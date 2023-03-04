@@ -29,6 +29,11 @@
 
 <!-- 
 然後在前端：添加搜索輸入
+1. 我要加新 SvelteKit 路由: `/query` 所以我創建這個文件: `routes/query/+page.svelte` 
+2. 加一個輸入，bind 那個輸入的值到 query 變量. 把那個 query 發送到我們的後端 API
+3. 等待答案, 然後把答案給用戶
+
+Next is the frontend: add a search input
 1. Create a new SvelteKit route that will display at `/query` by adding `routes/query/+page.svelte`
 2. Add an input, bind the value to the query variable and send that to our backend API using a fetch request
 3. When we receive the answer we'll display the markdown to the user.
