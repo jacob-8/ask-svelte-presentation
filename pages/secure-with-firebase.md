@@ -1,4 +1,4 @@
-## <logos-firebase/> 使用 Firebase Auth 保護您的 API <!-- Secure your API with Firebase Auth -->
+## <logos-firebase/> 使用 Firebase Auth 保護 API <!-- Secure your API with Firebase Auth -->
 
 - [創建一個 Firebase 項目](https://firebase.google.com/?hl=zh-cn) <!-- Create a Firebase Project -->
   - Turn on Google Auth and Passwordless Email Auth in your Firebase Console

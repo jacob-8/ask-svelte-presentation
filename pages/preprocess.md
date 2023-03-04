@@ -1,4 +1,4 @@
-## <clarity-process-on-vm-line inline /> 將知識庫預處理成小部分 <!-- Preprocess knowledge base into small sections -->
+## <clarity-process-on-vm-line inline /> 把文檔預處理成小部分 <!-- Preprocess documentation into small sections -->
 
 <div flex flex-wrap space-x-4>
 <div>
@@ -87,4 +87,15 @@ async function add_embeddings(sections: Section[]): Promise<Section[]> {
 </div>
 </div>
 
-<!-- In my project, I take these processed docs and save them to a CSV. In a production application with many documents, you would want store them in vector database and I will share links to suggestions later. -->
+<!-- 怎麼把文檔預處理成小部分呢?
+
+- Here is a simplified version of the process I run for every markdown file in the SvelteKit documentation.
+- Read the file contents
+- Parse into section by markdown heading using Remark and the Unified processing pipeline.
+- Create a hash for each section based on it's content - this will serve as the section ID and I can use it in the future to know if a section's content have changed.
+- Then I count how many tokens a section is. This is a measure of text length that OpenAI uses for billing usage.
+- Then I generate an embedding for each section...
+  - using OpenAI's Embeddings endpoint
+  - with an important pause after each request to avoid errors for making requests too many requests at once
+- In my project, I take these processed sections and save them to a CSV. In a production application with many documents, you would want store them in vector database and I will share links to suggestions later.
+- So what is an embedding? -->

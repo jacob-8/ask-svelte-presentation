@@ -1,3 +1,3 @@
-# What are embeddings?
+## 矢量數據 (Embeddings) 是什麼？
 
-Explain if time
+

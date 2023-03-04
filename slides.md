@@ -3,7 +3,7 @@ theme: seriph
 background: https://source.unsplash.com/fVBWN3_ST0E/1920x1080 # selected from a curated Unsplash collection by Anthony https://unsplash.com/collections/94734566/slidev
 class: 'text-center'
 highlighter: shiki
-lineNumbers: false
+lineNumbers: true
 info: |
   ## Ask Svelte Presentation for March 2023 TOOCON
 drawings:
@@ -128,7 +128,7 @@ li {
 }
 </style>
 
-<!-- 首先 -->
+<!-- 首先... -->
 
 ---
 src: ./pages/preprocess.md
@@ -140,6 +140,10 @@ src: ./pages/what-are-embeddings.md
 
 ---
 src: ./pages/create-embeddings.md
+---
+
+---
+src: ./pages/embedding-costs.md
 ---
 
 ---

@@ -1,8 +1,8 @@
-## <carbon-bare-metal-server /> 創建 SvelteKit 後端 API 端點 <!-- Create SvelteKit back-end API endpoint  -->
+## <carbon-bare-metal-server /> 後端：創建 SvelteKit API 端點 <!-- Create SvelteKit back-end API endpoint  -->
 
-- <carbon-3d-print-mesh /> 創建用戶問題的 Embedding <!-- Create embedding of user's query -->
-- <fluent-mdl2-documentation /> 使用 Embeddings 來查找最相關的文檔部分 <!-- Use embeddings to find most relevant documentation sections -->
-- <carbon-chat /> 將相關文檔和用戶問題發送給 OpenAI <!-- Send relevant documentation and user's question to OpenAI -->
+- <carbon-3d-print-mesh /> 把用戶的問題創建矢量數據 <!-- Create embedding of user's query -->
+- <fluent-mdl2-documentation /> 使用矢量數據來查找最相關的文檔部分 <!-- Use embeddings to find most relevant documentation sections -->
+- <carbon-chat /> 把相關文檔部分和用戶的問題發送給 OpenAI <!-- Send relevant documentation and user's question to OpenAI -->
 
 ```ts {all|4-5|6-7|8-9|8-9|10-17}
 // src/routes/api/query/+server.ts
