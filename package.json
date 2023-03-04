@@ -17,6 +17,7 @@
     "@iconify-json/fluent": "^1.1.18",
     "@iconify-json/fluent-mdl2": "^1.1.1",
     "@iconify-json/logos": "^1.1.23",
-    "@iconify-json/mdi": "^1.1.48"
+    "@iconify-json/mdi": "^1.1.48",
+    "@iconify-json/uil": "^1.1.4"
   }
 }

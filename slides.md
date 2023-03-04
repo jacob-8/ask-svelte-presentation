@@ -3,12 +3,11 @@ theme: seriph
 background: https://source.unsplash.com/fVBWN3_ST0E/1920x1080 # selected from a curated Unsplash collection by Anthony https://unsplash.com/collections/94734566/slidev
 class: 'text-center'
 highlighter: shiki
-lineNumbers: true
+lineNumbers: false
 info: |
   ## Ask Svelte Presentation for March 2023 TOOCON
 drawings:
   persist: false
-# transition: fade-out
 css: unocss
 ---
 
@@ -31,18 +30,32 @@ css: unocss
   </a>
 </div>
 
+<style>
+p {
+  font-size: 150%;
+}
+</style>
+
 <!--
-了解我如何使用 OpenAI 和 SvelteKit 為 Svelte 文檔站點構建類似 ChatGPT 的多語言對話搜索。
-了解我如何使用 Firebase Auth 保護我的 API，並獲得一些關於如何使用 Firebase 為您自己或您的公司創建多語言搜索工具的想法。
+大家好! 今天我很高興給大家一個 AI 的介紹。 我很感謝**戴維廷**(Dài Wéitíng)給我這個機會。 2004，大概，我開始做網站。 到目前我沒有給技術的演講經驗。 有一次我給一個演講關於技術，但我的觀眾不是程式人。 所以這是我第一次真的的技術演講。我正在學習中文，所以我想，為什麼不用中文進行我的第一次技術的演講呢？ 那以後如果我用英文演講的時候，我會覺得很容易。
+
+那我們開始把。 我覺得你們已經知道怎麼用 ChatGPT，但你知道怎麼把 ChatGPT 放在自己的工具?
+
+今天我會幫助你了解我如何使用 OpenAI 和 SvelteKit 為 Svelte 文檔站點構建類似 ChatGPT 的多語言對話搜索。還有了解我如何使用 Firebase Auth 保護我的 API。最後我希望你獲得一些關於如何使用 Firebase 為你自己或你的公司創建多語言搜索工具的想法。
 -->
 
 ---
 
 # 搜索演示
 
+TODO: Picture of SvelteKit page alongside pic of answer pulled from that page.
+
 <img m="y-10" border="rounded" src="/favorite-zh.png">
 
 [polylingual.dev/zh-TW/search](https://polylingual.dev/zh-TW/search)
+
+<!-- 首先，我會展示我構建的聰明的搜索引擎，然後如何構建它。Svelte 是一個
+JavaScript 框架，還有你可以利用 SvelteKit 做厲害的 web 應用程序。 好像 NextJS。 那 SvelteKit 沒有中文的文檔。 翻譯文檔很難，因為內容常常變化。 這不再是問題。 使用我的工具，我們可以獲取英文文檔，用中文提出問題，然後得到有用的中文回答。 -->
 
 ---
 layout: iframe-right
@@ -58,7 +71,11 @@ url: https://polylingual.dev
 
 95+ 語言: <span class="text-blue">**繁體中文**</span>、簡體中文、英語、日語、韓語、印度尼西亞語、西班牙語、法語、德語、阿拉伯語、荷蘭語、越南語、泰語、阿爾巴尼亞語、亞美尼亞語、阿瓦迪語、阿塞拜疆語、巴什基爾語、巴斯克語、白俄羅斯語、孟加拉語、博傑普爾語、波斯尼亞語、巴西語 葡萄牙語、保加利亞語、加泰羅尼亞語、恰蒂斯加爾希語、克羅地亞語、捷克語、丹麥語、多格里語、愛沙尼亞語、法羅語、芬蘭語、加利西亞語、格魯吉亞語、希臘語、古吉拉特語、哈里亞納語、印地語、匈牙利語、愛爾蘭語、意大利語、爪哇語、卡納達語、克什米爾語、邁蒂利語、馬來語、廣東話、吳語、等
 
-<!-- Source: https://seo.ai/blog/how-many-languages-does-chatgpt-support -->
+<!-- 讓我問幾個問題。 最後我會讓你們試試看，所以如果你有使用 SvelteKit、NextJS、Nuxt、Astro 或任何 JavaScript 框架的經驗，請開始考慮你想問什麼問題。
+
+[INSERT TWO QUESTIONS IN CHINESE]
+
+[95 languages source](https://seo.ai/blog/how-many-languages-does-chatgpt-support) -->
 
 ---
 
@@ -70,34 +87,60 @@ url: https://polylingual.dev
 - 產品文檔 <!-- product documentation -->
 - 個人知識庫 <!-- personal knowledge base -->
 
+<style>
+h1 {
+  font-size: 220%;
+  margin-bottom: 40px;
+}
+* {
+  font-size: 140%;
+}
+</style>
+
+<!-- 這個 technology 有很多領用. 
+
+READ 3 bullets. 
+
+你唯一的限制是你的想像力。-->
+
 ---
 
 # 怎麼構建知識庫搜索
 
-- <clarity-process-on-vm-line inline /> 將知識庫預處理成小部分 <!-- Preprocess knowledge base into small sections -->
-- <carbon-3d-print-mesh /> 使用 OpenAI 創建 Embeddings <!-- Create embeddings using OpenAI -->
+<v-clicks>
+
+- <clarity-process-on-vm-line inline /> 把文檔預處理成小部分 <!-- Preprocess documentation into small sections -->
+- <carbon-3d-print-mesh /> 使用 OpenAI 創建矢量數據 (Embeddings) <!-- Create embeddings using OpenAI -->
 - <carbon-search /> 前端：添加搜索輸入 <!-- Add a search box to the front end -->
-- <carbon-bare-metal-server /> 創建 SvelteKit 後端 API 端點 <!-- Create SvelteKit back-end API endpoint  -->
-  - <carbon-3d-print-mesh /> 創建用戶問題的 Embedding <!-- Create embedding of user's query -->
-  - <fluent-mdl2-documentation /> 使用 Embeddings 來查找最相關的文檔部分 <!-- Use embeddings to find most relevant documentation sections -->
-  - <carbon-chat /> 將相關文檔和用戶問題發送給 OpenAI <!-- Send relevant documentation and user's question to OpenAI -->
-  - <fluent-stream-output-20-regular /> 將答案流式傳輸給用戶 <!-- Stream answer back to user -->
-- <mdi-message-text-fast-outline /> 顯示答案 <!--Show answer-->
-- <logos-firebase/> 使用 Firebase Auth 保護您的 API <!-- Secure your API with Firebase Auth -->
+- <carbon-bare-metal-server /> 後端：創建 SvelteKit API 端點 <!-- Create SvelteKit back-end API endpoint  -->
+  - <carbon-3d-print-mesh /> 把用戶的問題創建矢量數據 <!-- Create embedding of user's query -->
+  - <fluent-mdl2-documentation /> 使用矢量數據來查找最相關的文檔部分 <!-- Use embeddings to find most relevant documentation sections -->
+  - <carbon-chat /> 把相關文檔部分和用戶的問題發送給 OpenAI <!-- Send relevant documentation and user's question to OpenAI -->
+  - <fluent-stream-output-20-regular /> 把答案流式傳輸給用戶 <!-- Stream answer back to user -->
+- <mdi-message-text-fast-outline /> 前端：展示答案 <!--Show answer-->
+- <logos-firebase/> 使用 Firebase Auth 保護 API <!-- Secure your API with Firebase Auth -->
+
+</v-clicks>
+
+<style>
+li {
+  font-size: 1.5rem;
+}
+</style>
+
+<!-- 首先 -->
 
 ---
 src: ./pages/preprocess.md
 ---
 
 ---
+src: ./pages/what-are-embeddings.md
+---
+
+---
 src: ./pages/create-embeddings.md
 ---
-
----
-
-# What is an embedding?
-
-Explain if time
 
 ---
 src: ./pages/search-box.md
@@ -115,25 +158,42 @@ src: ./pages/secure-with-firebase.md
 
 # 未來的任務
 
-- <logos-firebase/> 將問題和答案保存到 Firestore
-- 計數使用
-- 如果您的知識庫很大並且您想快速檢索最相關的文檔部分，您可以使用 [Google Cloud Matching Engine Vertex AI](https://cloud.google.com/blog/topics/developers-practitioners/find-anything-blazingly-fast-googles-vector-search-technology) 或任何 [OpenAI 建議的矢量數據庫](https://platform.openai.com/docs/guides/embeddings/how-can-i-retrieve-k-nearest-embedding-vectors-quickly)
+<v-clicks>
 
-<!-- This will allow users to view their history and you can provide cached answers to nearly identical questions. -->
+- <logos-firebase/> 把問題和答案保存到 Firestore
+- <uil-tachometer-fast/> 計數使用
+- <carbon-3d-print-mesh /> 使用矢量數據搜索引擎 
+  - [Google Cloud Matching Engine Vertex AI](https://cloud.google.com/blog/topics/developers-practitioners/find-anything-blazingly-fast-googles-vector-search-technology) 
+  - 任何 [OpenAI 建議的矢量數據庫](https://platform.openai.com/docs/guides/embeddings/how-can-i-retrieve-k-nearest-embedding-vectors-quickly)
+
+</v-clicks>
+
+<style>
+li {
+  font-size: 1.5rem;
+}
+</style>
+
+<!-- 
+1. ...所以用戶可以查看他們的歷史, 或是對類似問題使用存的答案
+2. ...了解或收取使用費
+3. 如果你的知識庫很大並且你想快速檢索最相關的文檔部分，你可以... -->
 
 ---
 
 # 了解更多
 
-- <carbon-logo-github /> 查看源代碼: [**polylingual.dev**](https://github.com/jacob-8/polylingual.dev)
+- <carbon-logo-github /> 查看源代碼: [**jacob-8/polylingual.dev**](https://github.com/jacob-8/polylingual.dev)
 <br />
 
 - [OpenAI Introducing text and code embeddings](https://openai.com/blog/introducing-text-and-code-embeddings/), [OpenAI Emebeddings Documentation](https://platform.openai.com/docs/guides/embeddings/what-are-embeddings)
 - [Storing OpenAI embeddings in Postgres with pgvector](https://supabase.com/blog/openai-embeddings-postgres-vector), [Supabase Clippy: ChatGPT for Supabase Docs](https://supabase.com/blog/chatgpt-supabase-docs)
 - [Nearest Neighbor Search](https://towardsdatascience.com/using-approximate-nearest-neighbor-search-in-real-world-applications-a75c351445d)
 - [Vertex AI Matching Engine overview](https://cloud.google.com/vertex-ai/docs/matching-engine/overview)
-- [Visualize Embeddings](https://nnext.ai/wiki/Visualizing-ChatGPT-embeddings-2ecbf1423280479fa6f303c3343a49a1)
+- [Perform Semantic Search on a Postgres database](https://nnext.ai/wiki/Introducing-pgvector---Perform-Semantic-Search-on-a-Postgres-database-e114fca6811c4583a6d516eca80ff42b)
 - [sqlite-vss: A SQLite Extension for Vector Search](https://observablehq.com/@asg017/introducing-sqlite-vss)
+
+<!-- 如果你要了解更多,我將在 TOOCON Facebook 頁面上發布這個 Slidev PPT，你可以用這些鏈接查看我的項目的源代碼或閱讀這些有用的文章。 -->
 
 ---
 
@@ -155,6 +215,7 @@ url: https://polylingual.dev
 - <logos-twitter/> [@jacobbowdoin](https://twitter.com/jacobbowdoin)
 - <logos-facebook/> [了解 JavaScript 高雄社團](https://www.facebook.com/groups/liaojiejavascript): 每週一晚上七點到九點我們開會。
 
-<img ml-6 mt-4 w-180px border="rounded" src="/facebook-qr.png">
+<img ml-12 mt-4 w-180px border="rounded" src="/facebook-qr.png">
 
+<!-- Liánxì wǒ -->
 ---
