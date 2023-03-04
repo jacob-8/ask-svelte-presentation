@@ -1,4 +1,4 @@
-## <carbon-currency-dollar/> OpenAI 矢量數據 - 多少錢? <!-- How much do OpenAI Embeddings cost? -->
+## <carbon-currency-dollar/> OpenAI Embeddings - 多少錢? <!-- How much do OpenAI Embeddings cost? -->
 
 <v-clicks>
 

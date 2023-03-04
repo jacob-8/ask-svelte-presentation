@@ -3,12 +3,12 @@
 <ul>
 <li>
 <span v-if="$slidev.nav.clicks > 0">
-<carbon-3d-print-mesh /> 把用戶的問題創建矢量數據 <!-- Create embedding of user's query -->
+<carbon-3d-print-mesh /> 把用戶的問題創建 embedding <!-- Create embedding of user's query -->
 </span>
 </li>
 <li>
 <span v-if="$slidev.nav.clicks > 1">
-<fluent-mdl2-documentation /> 使用矢量數據來查找最相關的文檔部分 <!-- Use embeddings to find most relevant documentation sections -->
+<fluent-mdl2-documentation /> 使用 embedding 來查找最相關的文檔部分 <!-- Use embeddings to find most relevant documentation sections -->
 </span>
 </li>
 <li>
@@ -78,9 +78,9 @@ Answer as markdown in the same language as the question (including related code 
 
 <!-- 
 - 我要加新的 SvelteKit 的服務器路由: `/api/query` 所以我創建這個文件 `routes/api/query/+server.ts` 
-- 我要把用戶的問題創建矢量數據所以我利用為文檔部分創建矢量數據一樣的方法.
-- 加載有矢量數據的文檔部分，和找到與問題的意思最近的那些部分。
-  - 通過計算用戶的問題與文檔的每個部分之間的 cosine 相似度來執行此操作，並留 10 個左右最相似的部分。 現在我的 SvelteKit 文檔部分矢量數據的 CSV 文件是 5MB。 目前使用這種大小的 CSV 文件是可以的，但在某些時候我需要使用支持矢量的數據庫來存儲和找最接近的矢量數據。 使用 CSV 是一種很好的開始方法，不需要用矢量數據庫。
+- 我要把用戶的問題創建 embedding 所以我利用為文檔部分創建 embedding 一樣的方法.
+- 加載有 embedding 的文檔部分，和找到與問題的意思最近的那些部分。
+  - 通過計算用戶的問題與文檔的每個部分之間的 cosine 相似度來執行此操作，並留 10 個左右最相似的部分。 現在我的 SvelteKit 文檔部分 embedding 的 CSV 文件是 5MB。 目前使用這種大小的 CSV 文件是可以的，但在某些時候我需要使用支持矢量的數據庫來存儲和找最接近的 embedding。 使用 CSV 是一種很好的開始方法，不需要用矢量數據庫。
 - 然後把相關文檔部分和用戶的問題生成提示 (prompt)。
   - 首先給 ChatGPT 一個角色，然後給出指令，相關文檔部分，用戶的問題，還有更多指令。最後的指令非常重要: 用問題的語言生成答案和包括相關的代碼.
 - 創建 OpenAI 聊天請求

@@ -107,11 +107,11 @@ READ 3 bullets.
 <v-clicks>
 
 - <clarity-process-on-vm-line inline /> 把文檔預處理成小部分 <!-- Preprocess documentation into small sections -->
-- <carbon-3d-print-mesh /> 使用 OpenAI 創建矢量數據 (Embeddings) <!-- Create embeddings using OpenAI -->
+- <carbon-3d-print-mesh /> 使用 OpenAI 創建 embeddings <!-- Create embeddings using OpenAI -->
 - <carbon-search /> 前端：添加搜索輸入 <!-- Add a search box to the front end -->
 - <carbon-bare-metal-server /> 後端：創建 SvelteKit API 端點 <!-- Create SvelteKit back-end API endpoint  -->
-  - <carbon-3d-print-mesh /> 把用戶的問題創建矢量數據 <!-- Create embedding of user's query -->
-  - <fluent-mdl2-documentation /> 使用矢量數據來查找最相關的文檔部分 <!-- Use embeddings to find most relevant documentation sections -->
+  - <carbon-3d-print-mesh />  embedding <!-- Create embedding of user's query -->
+  - <fluent-mdl2-documentation /> 使用 embedding 來查找最相關的文檔部分 <!-- Use embeddings to find most relevant documentation sections -->
   - <carbon-chat /> 把相關文檔部分和用戶的問題發送給 OpenAI <!-- Send relevant documentation and user's question to OpenAI -->
   - <fluent-stream-output-20-regular /> 把答案流式傳輸給用戶 <!-- Stream answer back to user -->
 - <mdi-message-text-fast-outline /> 前端：展示答案 <!--Show answer-->
@@ -163,7 +163,7 @@ src: ./pages/secure-with-firebase.md
 
 - <logos-firebase/> 把問題和答案保存到 Firestore
 - <uil-tachometer-fast/> 計數使用
-- <carbon-3d-print-mesh /> 使用矢量數據搜索引擎 
+- <carbon-3d-print-mesh /> 使用 embedding 搜索引擎 
   - [Google Cloud Matching Engine Vertex AI](https://cloud.google.com/blog/topics/developers-practitioners/find-anything-blazingly-fast-googles-vector-search-technology) 
   - 任何 [OpenAI 建議的矢量數據庫](https://platform.openai.com/docs/guides/embeddings/how-can-i-retrieve-k-nearest-embedding-vectors-quickly)
 
