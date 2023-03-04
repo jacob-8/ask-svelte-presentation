@@ -3,7 +3,7 @@ theme: seriph
 background: https://source.unsplash.com/fVBWN3_ST0E/1920x1080 # selected from a curated Unsplash collection by Anthony https://unsplash.com/collections/94734566/slidev
 class: 'text-center'
 highlighter: shiki
-lineNumbers: true
+lineNumbers: false
 info: |
   ## Ask Svelte Presentation for March 2023 TOOCON
 drawings:
@@ -180,7 +180,7 @@ li {
 
 <!-- 
 1. ...所以用戶可以查看他們的歷史, 或是對類似問題使用存的答案
-2. ...了解或收取使用費
+2. ...了解用戶或收取使用費
 3. 如果你的知識庫很大並且你想快速檢索最相關的文檔部分，你可以... -->
 
 ---
@@ -197,7 +197,7 @@ li {
 - [Perform Semantic Search on a Postgres database](https://nnext.ai/wiki/Introducing-pgvector---Perform-Semantic-Search-on-a-Postgres-database-e114fca6811c4583a6d516eca80ff42b)
 - [sqlite-vss: A SQLite Extension for Vector Search](https://observablehq.com/@asg017/introducing-sqlite-vss)
 
-<!-- 如果你要了解更多,我將在 TOOCON Facebook 頁面上發布這個 Slidev PPT，你可以用這些鏈接查看我的項目的源代碼或閱讀這些有用的文章。 -->
+<!-- Now that you've seen how the multilingual ChatGPT like search works, when you have time I hope you will take some time to explore the source code and try things out for yourself. 我會在 TOOCON Facebook 頁面上發布這個 Slidev PPT，你可以用這些鏈接查看我的項目的源代碼或閱讀這些有用的文章。 -->
 
 ---
 
@@ -221,5 +221,8 @@ url: https://polylingual.dev
 
 <img ml-12 mt-4 w-180px border="rounded" src="/facebook-qr.png">
 
-<!-- Liánxì wǒ -->
+<!-- Scan the QR Code to go to our Facebook community page and you'll see a discussion post where you can add a question in Chinese, then I'll paste it in here.
+
+liánxì -->
+
 ---

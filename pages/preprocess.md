@@ -8,7 +8,7 @@ async function process_doc(filepath: string): Promise<ProcessedDoc> {
   const sections = parse_markdown_sections(markdown);
   const sections_with_hashes = add_hashes(sections);
   const sections_with_tokens = add_tokens(sections_with_hashes);
-  const sections_with_embeddings = await get_embeddings(sections_with_tokens);
+  const sections_with_embeddings = await add_embeddings(sections_with_tokens);
   return {
     filepath,
     sections: sections_with_embeddings,

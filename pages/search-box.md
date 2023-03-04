@@ -1,6 +1,7 @@
 ## <carbon-search /> 前端：添加搜索輸入 <!-- Add a search box to the front end -->
 
-```svelte {all|4,8,10,19|5,14,23|8}
+```svelte {all|5,9,11,19|6,14,23|9}
+<!-- src/routes/query/+page.svelte -->
 <script lang="ts">
   import SvelteMarkdown from 'svelte-markdown';
   
@@ -13,7 +14,6 @@
       body: JSON.stringify({ query }),
       headers: { 'content-type': 'application/json' }
     });
-
     answer = await response.json();
   }
 </script>
@@ -28,5 +28,9 @@
 ```
 
 <!-- 
-This will send a query to our backend and listen for answers
-Last line: Now, let's create the backend API for this route. Since we're using SvelteKit, that's REALLY easy. -->
+然後在前端：添加搜索輸入
+1. Create a new SvelteKit route that will display at `/query` by adding `routes/query/+page.svelte`
+2. Add an input, bind the value to the query variable and send that to our backend API using a fetch request
+3. When we receive the answer we'll display the markdown to the user.
+
+Now, let's create the backend API for `/api/query`. Since we're using SvelteKit, it's REALLY easy. -->

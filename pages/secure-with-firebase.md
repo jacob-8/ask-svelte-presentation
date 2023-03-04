@@ -1,8 +1,8 @@
 ## <logos-firebase/> 使用 Firebase Auth 保護 API <!-- Secure your API with Firebase Auth -->
 
 - [創建一個 Firebase 項目](https://firebase.google.com/?hl=zh-cn) <!-- Create a Firebase Project -->
-  - Turn on Google Auth and Passwordless Email Auth in your Firebase Console
-  - Add Firebase Project Config to your `.env` file: 
+  - 在 Firebase Console 打開 Google Auth 和 Passwordless Email Auth 
+  - 把 Firebase Project Config 放在 `.env` 文件: 
 ```
 PUBLIC_FIREBASE_CONFIG={"apiKey":"...","authDomain":"YOURPROJECTID.firebaseapp.com","databaseURL":"https://YOURPROJECTID.firebaseio.com","projectId":"YOURPROJECTID","storageBucket":"YOURPROJECTID.appspot.com","messagingSenderId":"...","appId":"...","measurementId":"..."}
 ```
@@ -10,8 +10,8 @@ PUBLIC_FIREBASE_CONFIG={"apiKey":"...","authDomain":"YOURPROJECTID.firebaseapp.c
 <div mt-5 v-click>
 
 - 使用 [SvelteFireTS](https://sveltefirets.vercel.app/) 添加多語言 Firebase Auth <!-- Use SvelteFireTS to add multilingual Firebase Auth -->
-  - Install: `npm i -D sveltefirets`
-  - Use the `FirebaseUiAuth` component for multilingual sign-in:
+  - `npm install -D sveltefirets`
+  - 使用 `FirebaseUiAuth` component 進行多語言登入：
 ```svelte
 <script lang="ts">
   import { FirebaseUiAuth } from 'sveltefirets';
@@ -24,16 +24,20 @@ PUBLIC_FIREBASE_CONFIG={"apiKey":"...","authDomain":"YOURPROJECTID.firebaseapp.c
 </div>
 
 <!-- 
-1. Create a Firebase Project - there are many good guides already on how to do this. 
-2. 
+... English is the default, add `zh_tw` for traditional Chinese 
+
+layout: iframe-right
+url: https://sveltefirets.vercel.app/1-auth/spanish
 -->
 
 ---
 
-## <logos-firebase/> 使用 Firebase Auth 保護您的 API <!-- Secure your API with Firebase Auth -->
+## <logos-firebase/> 使用 Firebase Auth 保護 API <!-- Secure your API with Firebase Auth -->
 
-- Pass token to backend
-```svelte {2,5-6,11}
+在 API 請求中包含 auth token
+
+```svelte {3,6-7,12}
+<!-- src/routes/query/+page.svelte -->
 <script lang="ts">
   import { authState } from 'sveltefirets';
   // ...
@@ -55,15 +59,36 @@ PUBLIC_FIREBASE_CONFIG={"apiKey":"...","authDomain":"YOURPROJECTID.firebaseapp.c
 <!-- ...search input... -->
 ```
 
+<!-- Once a user is logged in you can get an auth token to and pass it to your backend along with the user's question -->
+
+
 ---
 
-## <logos-firebase/> 使用 Firebase Auth 保護您的 API <!-- Secure your API with Firebase Auth -->
+## <logos-firebase/> 使用 Firebase Auth 保護 API <!-- Secure your API with Firebase Auth -->
 
-- Verify token before answering question
-  - Install Firebase Admin: `npm i -D firebase-admin` and create a new service account key
-  - Create a function to verify the token:
+解碼 API 端點中的 auth token
 
-```ts {all|4-5|9-13,17|16-19}
+```ts {all|5}
+// src/routes/api/query/+server.ts
+
+export const POST: RequestHandler = async ({ request, fetch }) => {
+  const { query, auth_token } = await request.json();
+  const decodedToken = await decodeToken(auth_token);
+  const user_id = decodedToken?.uid;
+  if (!user_id) throw error(400, "Unauthorized usage");
+  // ...
+}
+```
+
+<!-- 解碼 API 端點中的 auth token 以確保用戶已通過身份驗證。 At this point you can control usage based on the user and your needs. If they are not authenticated, throw an error.
+
+Now we need to create that decodeToken function.-->
+
+---
+
+## <logos-firebase/> 使用 Firebase Auth 保護 API <!-- Secure your API with Firebase Auth -->
+
+```ts {4-5|1-2,9-13,17|16-19}
 import { initializeApp, getApps, cert, type ServiceAccount } from 'firebase-admin/app';
 import { getAuth } from 'firebase-admin/auth';
 import type { DecodedIdToken } from 'firebase-admin/lib/auth/token-verifier';
@@ -85,20 +110,24 @@ export async function decodeToken(token: string): Promise<DecodedIdToken> {
 }
 ```
 
----
+<ul>
+<li>
+創建一個新的 firebase-admin service account key
+</li>
+<li v-if="$slidev.nav.clicks > 0">
+安裝 firebase-admin: `npm install -D firebase-admin`</li>
+<li v-if="$slidev.nav.clicks > 2">
+<carbon-chat /> 把相關文檔部分和用戶的問題發送給 OpenAI <!-- Send relevant documentation and user's question to OpenAI -->
+</li>
+</ul>
 
-## <logos-firebase/> 使用 Firebase Auth 保護您的 API <!-- Secure your API with Firebase Auth -->
 
-Then you can use that function in your server endpoint you created earlier to ensure a user is authenticated. At this point you can control usage based on the user and your needs. 
+<!-- Then verify and decode the auth token. 
 
-```ts
-// src/routes/api/query/+server.ts
+That's all for the code walkthrough today:
+- we processed our documentation
+- add a front-end search input
+- added a backend to answer questions
+- and secured everything with Firebase Authentication
 
-export const POST: RequestHandler = async ({ request, fetch }) => {
-  const { query, auth_token } = await request.json();
-  const decodedToken = await decodeToken(auth_token);
-  const user_id = decodedToken?.uid;
-  if (!user_id) throw error(400, "Unauthorized usage");
-  // ...
-}
-```
+That will create a working tool, but there are some logical next steps we could take with a project like this... -->
