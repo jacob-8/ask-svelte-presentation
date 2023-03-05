@@ -1,4 +1,4 @@
-## <clarity-process-on-vm-line inline /> 把文檔預處理成小部分 <!-- Preprocess documentation into small sections -->
+## <clarity-process-on-vm-line inline /> 把文檔預先處理成小部分 <!-- Preprocess documentation into small sections -->
 
 <div flex flex-wrap space-x-4>
 <div>
@@ -91,18 +91,18 @@ async function add_embeddings(sections: Section[]): Promise<Section[]> {
 </div>
 </div>
 
-<!-- 怎麼把文檔預處理成小部分呢?
+<!-- 怎麼把文檔預先處理成小部分呢?
 
-這是預處理過程的簡化版本. 我把每個 SvelteKit 文檔的 markdown 文件上運行這個函數:
+這是預先處理過程的簡化版本. 我把每個 SvelteKit 文檔的 markdown 文件上執行這個函數:
 
 - 讀文件內容
-- 使用 Remark 和 Unified 處理管道按 markdown 標題解析為部分
-- 根據內容為每個部分創建一個散列 (hash), 這個散列是部分的 ID. 我可以在將來使用它來知道部分內容是不是改變的。
+- 使用 Remark 和 Unified 處理路徑按 markdown 標題解析為部分
+- 根據內容為每個部分創建一個 hash, 這個 hash 是部分的 ID. 我可以在將來使用它來知道部分內容有沒有變化。
 - 然後算數一個部分有多少個 tokens。這是 OpenAI 用於計費使用的文本長度度量。
 - 然後把每個部分生成一個 embedding...
   - 使用 OpenAi 的 embedding API
-  - 請注意，我們在請求之間等待 2 秒，免得請求速度過太快的錯誤。
-- 在我的項目中，我把這些處理過的部分保存到 CSV 文件中。 在包含許多文檔的生產應用程序中，你可能希望把它們存儲在矢量數據庫中，然後我會分享一些建議的矢量數據庫。
+  - 請注意，我們在請求之間等待 2 秒，免得請求速度過太快而發生錯誤。
+- 在我的項目中，我把這些處理過的部分儲存到 CSV 文件中。 在包含許多文檔的生產應用程序中，你可能希望把它們儲存在矢量數據庫中，然後我會分享一些建議的矢量數據庫。
 - 那麼什麼是 embeddings?
 
 Here is a simplified version of the process I run for every markdown file in the SvelteKit documentation.

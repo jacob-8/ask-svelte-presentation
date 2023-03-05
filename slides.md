@@ -5,15 +5,15 @@ class: 'text-center'
 highlighter: shiki
 lineNumbers: false
 info: |
-  ## Ask Svelte Presentation for March 2023 TOOCON
+  ## Ask SvelteKit Presentation for March 2023 TOOCON in Kaohsiung, Taiwan
 drawings:
   persist: false
 css: unocss
 ---
 
-# 問 Svelte <!-- Ask Svelte -->
+# 問 SvelteKit <!-- Ask SvelteKit -->
 
-使用 AI 以任何語言搜索知識庫 <!-- Use AI to search a knowledge knowledge using any language -->
+以任何語言來使用 AI 搜索知識庫 <!-- Use AI to search a knowledge knowledge using any language -->
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
@@ -36,33 +36,34 @@ p {
 </style>
 
 <!--
-大家好! 今天我很高興給大家一個 AI 的介紹。 我很感謝**戴維廷**(Dài Wéitíng)給我這個機會。 2004，大概，我開始做網站。 到目前我沒有給技術的演講經驗。 有一次我給一個演講關於技術，但我的觀眾不是程式人。 所以這是我第一次真的的技術演講。我正在學習中文，所以我想，為什麼不用中文進行我的第一次技術的演講呢？ 那以後如果我用英文演講的時候，我會覺得很容易。
+大家好! 今天我很高興給大家一個 AI 的介紹。 我很感謝**戴維廷**(Dài Wéitíng)給我這個機會。 大概 2004，我開始做網站。 到目前我還沒有關於這方面技術的演講經驗。 有一次我給一個演講關於技術，但我的觀眾不是程式人。 所以這是我第一次真的關於技術演講。我正在學習中文，所以我想，為什麼不用中文進行我第一次技術的演講呢？ 那以後如果我用英文演講的時候，我會覺得很容易。
 
 那我們開始把。 我覺得你們已經知道怎麼用 ChatGPT，但你知道怎麼把 ChatGPT 放在自己的工具?
 
-今天我會幫助你了解我如何使用 OpenAI 和 SvelteKit 為 Svelte 文檔站點構建類似 ChatGPT 的多語言對話搜索。還有了解我如何使用 Firebase Auth 保護我的 API。最後我希望你獲得一些關於如何使用 Firebase 為你自己或你的公司創建多語言搜索工具的想法。
+今天我會幫助你了解我如何使用 OpenAI 和 SvelteKit 為 Svelte 文檔網站構建類似 ChatGPT 的多語言對話搜索。還有了解我如何使用 Firebase Auth 保護我的 API。最後我希望你獲得一些關於如何使用 Firebase 為你自己或你的公司創建多語言搜索工具的想法。
 -->
 
 ---
 
-# 搜索演示
+# 搜索示範
 
-TODO: Picture of SvelteKit page alongside pic of answer pulled from that page.
-
+<div grid="~ cols-2 gap-2">
 <img m="y-10" border="rounded" src="/favorite-zh.png">
+<img m="y-10" border="rounded" src="/what-is-svelte.png">
+</div>
 
 [polylingual.dev/zh-TW/search](https://polylingual.dev/zh-TW/search)
 
-<!-- 首先，我會展示我構建的聰明的搜索引擎，然後如何構建它。Svelte 是一個 JavaScript 框架，還有你可以利用 SvelteKit 做厲害的 web 應用程序。 好像 NextJS。 那 SvelteKit 沒有中文的文檔。 翻譯文檔很難，因為內容常常變化。 這不再是問題。 使用我的工具，我們可以獲取英文文檔，用中文提出問題，然後得到有用的中文回答。 -->
+<!-- 首先，我會示範我構建的聰明的搜索引擎，然後如何構建它。Svelte 是一個 JavaScript 框架，還有你可以利用 SvelteKit 做厲害的 web 應用程式 (好像 NextJS)。 那 SvelteKit 沒有中文的文檔。 因為內容常常變化, 翻譯文檔很難。 這將不會再是問題。 使用我的工具，我們可以獲取英文文檔，用中文提出問題，然後得到有用的中文回答。 -->
 
 ---
 layout: iframe-right
 url: https://polylingual.dev
 ---
 
-# 搜索演示 <!-- Search Demo -->
+# 搜索示範 <!-- Search Demo -->
 
-- <logos-svelte-icon /> **搜索知識庫** - 搜索 Svelte 官方文檔  <!-- **Search Knowledge Base** - Search Svelte Official Documentation -->
+- <logos-svelte-icon /> **搜索知識庫** - 搜索 SvelteKit 官方文檔  <!-- **Search Knowledge Base** - Search SvelteKit Official Documentation -->
 - 🤖 **AI** - 使用 OpenAI ChatGPT-3.5 <!-- **AI** - Use OpenAI ChatGPT-3.5  -->
 - 🤹 **任何語言** - 它將使用相同的語言回复 <!-- **Any Language** - It will reply using the same language of the question -->
 
@@ -70,7 +71,10 @@ url: https://polylingual.dev
 
 <!-- 讓我問幾個問題。 最後我會讓你們試試看，所以如果你有使用 SvelteKit、NextJS、Nuxt、Astro 或任何 JavaScript 框架的經驗，請開始考慮你想問什麼問題。
 
-[INSERT TWO QUESTIONS IN CHINESE]
+Demo questions:
+1. How do I create a route matcher?
+   - How do I create a route matcher for the values "es" and "de"?
+2. TODO
 
 [95 languages source](https://seo.ai/blog/how-many-languages-does-chatgpt-support) -->
 
@@ -94,7 +98,7 @@ h1 {
 }
 </style>
 
-<!-- 這個 technology 有很多領用. 
+<!-- 這個科技有很多領用. 
 
 READ 3 bullets. 
 
@@ -110,11 +114,11 @@ READ 3 bullets.
 - <carbon-3d-print-mesh /> 使用 OpenAI 創建 embeddings <!-- Create embeddings using OpenAI -->
 - <carbon-search /> 前端：添加搜索輸入 <!-- Add a search box to the front end -->
 - <carbon-bare-metal-server /> 後端：創建 SvelteKit API 端點 <!-- Create SvelteKit back-end API endpoint  -->
-  - <carbon-3d-print-mesh />  embedding <!-- Create embedding of user's query -->
+  - <carbon-3d-print-mesh /> 把使用者的問題創建 embedding <!-- Create embedding of user's query -->
   - <fluent-mdl2-documentation /> 使用 embedding 來查找最相關的文檔部分 <!-- Use embeddings to find most relevant documentation sections -->
-  - <carbon-chat /> 把相關文檔部分和用戶的問題發送給 OpenAI <!-- Send relevant documentation and user's question to OpenAI -->
-  - <fluent-stream-output-20-regular /> 把答案流式傳輸給用戶 <!-- Stream answer back to user -->
-- <mdi-message-text-fast-outline /> 前端：展示答案 <!--Show answer-->
+  - <carbon-chat /> 把相關文檔部分和使用者的問題發送給 OpenAI <!-- Send relevant documentation and user's question to OpenAI -->
+  - <fluent-stream-output-20-regular /> 把答案流式傳輸給使用者 <!-- Stream answer back to user -->
+- <mdi-message-text-fast-outline /> 前端：示範答案 <!--Show answer-->
 - <logos-firebase/> 使用 Firebase Auth 保護 API <!-- Secure your API with Firebase Auth -->
 
 </v-clicks>
@@ -161,9 +165,9 @@ src: ./pages/secure-with-firebase.md
 
 <v-clicks>
 
-- <logos-firebase/> 把問題和答案保存到 Firestore
+- <logos-firebase/> 把問題和答案保儲存到 Firestore
 - <uil-tachometer-fast/> 計數使用
-- <carbon-3d-print-mesh /> 使用 embedding 搜索引擎 
+- <carbon-3d-print-mesh /> 使用 embeddings 搜索引擎 
   - [Google Cloud Matching Engine Vertex AI](https://cloud.google.com/blog/topics/developers-practitioners/find-anything-blazingly-fast-googles-vector-search-technology) 
   - 任何 [OpenAI 建議的矢量數據庫](https://platform.openai.com/docs/guides/embeddings/how-can-i-retrieve-k-nearest-embedding-vectors-quickly)
 
@@ -176,8 +180,8 @@ li {
 </style>
 
 <!-- 
-1. ...所以用戶可以查看他們的歷史, 或是對類似問題使用存的答案
-2. ...了解用戶或收取使用費
+1. ...所以使用者可以查看他們的歷史
+2. ...了解使用者或收取使用費
 3. 如果你的知識庫很大並且你想快速檢索最相關的文檔部分，你可以... -->
 
 ---
@@ -194,7 +198,7 @@ li {
 - [Perform Semantic Search on a Postgres database](https://nnext.ai/wiki/Introducing-pgvector---Perform-Semantic-Search-on-a-Postgres-database-e114fca6811c4583a6d516eca80ff42b)
 - [sqlite-vss: A SQLite Extension for Vector Search](https://observablehq.com/@asg017/introducing-sqlite-vss)
 
-<!-- 那, 因為你了解了搜索工具，當你有空，我希望你能花一些時間來探索源代碼和親自試試一下。 我會在 TOOCON Facebook 頁面上發布這個 Slidev PPT，你可以用這些鏈接查看我的項目的源代碼或閱讀這些有用的文章。 -->
+<!-- 那, 因為你了解了搜索工具，當你有空，我希望你能花一些時間來探索(tànsuǒ)源代碼和親自試試一下。 我會在 TOOCON Facebook 頁面上發布這個 Slidev PPT，你可以用這些(liànjiē)查看我的項目的源代碼或閱讀這些有用的文章。 -->
 
 ---
 
@@ -218,7 +222,7 @@ url: https://polylingual.dev
 
 <img ml-12 mt-4 w-180px border="rounded" src="/facebook-qr.png">
 
-<!-- 掃描 QR code 進入我的 Facebook 社團。你會看到一個討論帖子，請你把你的問題放在那邊(用中文)。然後我會把你的問題放在這個輸入。問 SvelteKit.
+<!-- 掃描(sǎomiáo) QR code 進入我的 Facebook 社團。你會看到一個討論區，請把你的問題放在那邊(用中文)。然後我會把你的問題放在這個輸入所以我們可以一起問 SvelteKit.
 
 liánxì -->
 

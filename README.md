@@ -1,4 +1,4 @@
-# Ask Svelte
+# Ask SvelteKit
 
 To start the slide show:
 

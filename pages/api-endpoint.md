@@ -3,7 +3,7 @@
 <ul>
 <li>
 <span v-if="$slidev.nav.clicks > 0">
-<carbon-3d-print-mesh /> 把用戶的問題創建 embedding <!-- Create embedding of user's query -->
+<carbon-3d-print-mesh /> 把使用者的問題創建 embedding <!-- Create embedding of user's query -->
 </span>
 </li>
 <li>
@@ -13,7 +13,7 @@
 </li>
 <li>
 <span v-if="$slidev.nav.clicks > 2">
-<carbon-chat /> 把相關文檔部分和用戶的問題發送給 OpenAI <!-- Send relevant documentation and user's question to OpenAI -->
+<carbon-chat /> 把相關文檔部分和使用者的問題發送給 OpenAI <!-- Send relevant documentation and user's question to OpenAI -->
 </span>
 </li>
 </ul>
@@ -78,15 +78,15 @@ Answer as markdown in the same language as the question (including related code 
 
 <!-- 
 - 我要加新的 SvelteKit 的服務器路由: `/api/query` 所以我創建這個文件 `routes/api/query/+server.ts` 
-- 我要把用戶的問題創建 embedding 所以我利用為文檔部分創建 embedding 一樣的方法.
-- 加載有 embedding 的文檔部分，和找到與問題的意思最近的那些部分。
-  - 通過計算用戶的問題與文檔的每個部分之間的 cosine 相似度來執行此操作，並留 10 個左右最相似的部分。 現在我的 SvelteKit 文檔部分 embedding 的 CSV 文件是 5MB。 目前使用這種大小的 CSV 文件是可以的，但在某些時候我需要使用支持矢量的數據庫來存儲和找最接近的 embedding。 使用 CSV 是一種很好的開始方法，不需要用矢量數據庫。
-- 然後把相關文檔部分和用戶的問題生成提示 (prompt)。
-  - 首先給 ChatGPT 一個角色，然後給出指令，相關文檔部分，用戶的問題，還有更多指令。最後的指令非常重要: 用問題的語言生成答案和包括相關的代碼.
+- 我要把使用者的問題創建 embedding 所以我利用一樣的創建 embeddings 的方法.
+- 加載有 embeddings 的文檔部分，和找到與問題的意思最近的那些部分。
+  - 通過計算使用者的問題與文檔的每個部分之間的 cosine 相似度來執行(zhíxíng)此操作(cāozuò)，並留 10 個左右最相似的部分。 現在我的 SvelteKit 文檔部分 embeddings 的 CSV 文件是 5MB。 目前使用這種大小的 CSV 文件是可以的，但在某些時候我需要使用支持(zhīchí)矢量(shǐliàng)的數據庫(shùjùkù)來儲存和找最接近的 embeddings。 使用 CSV 是一種很好的開始方法，不需要用矢量數據庫。
+- 然後把相關文檔部分和使用者的問題生成提示, prompt。
+  - 首先給 ChatGPT 一個角色，然後給出指令(zhǐlìng)，相關文檔部分，使用者的問題，還有更多指令。最後的指令非常重要: 用問題的語言生成答案和包括相關的代碼.
 - 創建 OpenAI 聊天請求
-  - 根據你的條件使用 `max_tokens` 限制。 我建議在你的指令中寫比較小的限製，因為如果 ChatGPT 給出的答案很長，在句子中間被`max_tokens` 限制截斷，這會讓用戶感到困惑。
--把 OpenAI 的答案發送到前端。如果你查看我的原代碼，你會發現我是在流式傳輸答案，這不是必需的，但可以提供更好的用戶經驗。
-- 那怎麼保護這個 API？
+  - 根據你的條件使用 `max_tokens` 來限制。
+- 把 OpenAI 的答案發送到前端。如果你查看我的原代碼，你會發現我是在流式傳輸(chuánshū)答案，這不是需要的，但可以提供更好的經驗。
+- 那,怎麼保護這個 API？
 
 
 - Create a server route that will be available at `/api/query` by creating a file in `src/routes/api/query/+server.ts`

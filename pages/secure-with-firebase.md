@@ -30,11 +30,11 @@ PUBLIC_FIREBASE_CONFIG={"apiKey":"...","authDomain":"YOURPROJECTID.firebaseapp.c
 </div>
 
 <!-- 
-- 首先創建一個 Firebase 項目 - 很簡單，網上有很多教程。
+- 首先創建一個 Firebase 項目, 打開 Auth, Firestore - 很簡單，網上有很多教程。
 - ...
 - 把 Firebase Project Config 放在 `.env` 文件 - SvelteKit
 - ... 
-- 默認是英文，為繁體中文加 `zh_tw` 
+- 默認(mòrèn)是英文，為繁體中文加 `zh_tw` 
 -->
 
 ---
@@ -68,7 +68,7 @@ PUBLIC_FIREBASE_CONFIG={"apiKey":"...","authDomain":"YOURPROJECTID.firebaseapp.c
 
 <!-- bāohán
 
-用戶登入後，你可以在前端獲得一個 auth token，並把它和用戶的問題一起傳遞到你的後端。
+使用者登入後，你可以在前端獲得一個 auth token，並把它和使用者的問題一起傳遞(chuándì)到你的後端。
 
 After a user is logged in you can get an auth token in the frontend and pass it to your backend along with the user's question. -->
 
@@ -91,7 +91,7 @@ export const POST: RequestHandler = async ({ request, fetch }) => {
 }
 ```
 
-<!-- 為確保用戶已通過身份驗證, 在 API 端點中我們需要把 auth token 解碼. 如果他未通過身份驗證，拋出錯誤。
+<!-- 為確保使用者已通過(tōngguò)身份驗證, 在 API 端點中我們需要把 auth token 解碼. 如果他未通過身份驗證，拋(pāo)出錯誤。
 
 現在我們需要編寫 decodeToken 函數。
 
@@ -134,7 +134,7 @@ export async function decodeToken(token: string): Promise<DecodedIdToken> {
 <li v-if="$slidev.nav.clicks > 0">
 安裝 firebase-admin: `npm install -D firebase-admin`</li>
 <li v-if="$slidev.nav.clicks > 2">
-<carbon-chat /> 把相關文檔部分和用戶的問題發送給 OpenAI <!-- Send relevant documentation and user's question to OpenAI -->
+<carbon-chat /> 把相關文檔部分和使用者的問題發送給 OpenAI <!-- Send relevant documentation and user's question to OpenAI -->
 </li>
 </ul>
 
@@ -142,7 +142,7 @@ export async function decodeToken(token: string): Promise<DecodedIdToken> {
 <!-- 
 Read bullets
 
-- 初始化 firebase-admin，它在沒有安全規則的後端運行
+- 初始化 firebase-admin
 - 驗證和解碼 auth token
 
 這就是今天的代碼演練的全部內容:
@@ -151,9 +151,9 @@ Read bullets
 - 添加了一個後端來回答問題
 - 最後使用 Firebase Auth 保護 API
 
-現在我們的搜索成功了，但對於像這樣的項目，我們可以採取一些合乎邏輯的後續步驟。
+現在我們的搜索成功了，但對於像這樣的項目，我們可以採取(cǎiqǔ)一些合乎(héhū)邏輯(luójí)的後續步驟(bùzhòu)。
 
-- Initialize firebase-admin, this runs on the backend without security rules
+- Initialize firebase-admin
 - Verify and decode the auth token
 
 That's all for the code walkthrough today:

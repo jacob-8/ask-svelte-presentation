@@ -20,8 +20,9 @@ async function generate_embedding(text: string): Promise<number[]> {
 <!--
 1. 使用你的 API 密鑰初始化 OpenAIApi
 2. 把字符串 (zìfú chuàn) 發送到 OpenAI
-3. 接收 embedding, OpenAI 的 embeddings 有 1536 個維度 (方面)
-- 請注意，這些代碼示例沒有導入和錯誤捕獲，讓我比較容易給大家解釋，但然後請閱讀源代碼, 它有導入和錯誤捕獲。
+3. 接收 embedding, OpenAI 的 embeddings 有 1536 個維度/方面
+
+- 請注意，這些代碼示例沒有導入(dǎorù)和錯誤捕獲(bǔhuò)，讓我比較容易給大家解釋，但然後請閱讀源代碼, 它有導入和錯誤捕獲。
 
 1. Init OpenAIApi using your API key
 2. Send the string to OpenAI
