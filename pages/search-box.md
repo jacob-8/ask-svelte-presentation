@@ -28,10 +28,14 @@
 ```
 
 <!-- 
-然後在前端：添加搜索輸入
-1. 我要加新 SvelteKit 路由: `/query` 所以我創建這個文件: `routes/query/+page.svelte` 
-2. 加一個輸入，bind 那個輸入的值到 query 變量. 把那個 query 發送到我們的後端 API
-3. 等待答案, 再顯示答案
+然後在前端：添加搜索輸入 (1-4)
+
+我要加新的 SvelteKit 路由: `/query` 所以我創建這個文件: `routes/query/+page.svelte` 
+
+(click each)
+- 加一個輸入，bind 那個輸入的值到 query 變量. 把那個 query 發送到我們的後端 API
+- 等待答案, 再顯示答案
+- 那,在後端：創建這個 API 端點
 
 Next is the frontend: add a search input
 1. Create a new SvelteKit route that will display at `/query` by adding `routes/query/+page.svelte`

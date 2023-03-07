@@ -30,10 +30,10 @@ PUBLIC_FIREBASE_CONFIG={"apiKey":"...","authDomain":"YOURPROJECTID.firebaseapp.c
 </div>
 
 <!-- 
-- 首先創建一個 Firebase 項目, 打開 Auth, Firestore - 很簡單，網上有很多教程。
-- ...
-- 把 Firebase Project Config 放在 `.env` 文件 - SvelteKit
-- ... 
+- 首先創建一個 Firebase 項目, 很簡單，網上有很多教程。
+
+Read all bullets
+
 - 默認(mòrèn)是英文，為繁體中文加 `zh_tw` 
 -->
 
@@ -68,7 +68,7 @@ PUBLIC_FIREBASE_CONFIG={"apiKey":"...","authDomain":"YOURPROJECTID.firebaseapp.c
 
 <!-- bāohán
 
-使用者登入後，你可以在前端獲得一個 auth token，並把它和使用者的問題一起傳遞(chuándì)到你的後端。
+使用者登入(1-4)後，你可以在前端獲得一個 auth token，並把它和使用者的問題一起傳遞(chuándì)到你的後端。
 
 After a user is logged in you can get an auth token in the frontend and pass it to your backend along with the user's question. -->
 
@@ -91,9 +91,11 @@ export const POST: RequestHandler = async ({ request, fetch }) => {
 }
 ```
 
-<!-- 為確保使用者已通過(tōngguò)身份驗證, 在 API 端點中我們需要把 auth token 解碼. 如果他未通過身份驗證，拋(pāo)出錯誤。
+<!-- 為確保使用者已通過(tōngguò)身份驗證(shēnfèn yànzhèng), 在 API 端點中我們需要把 auth token 解碼 (3-3). 如果他未通過身份驗證，拋(pāo)出錯誤。
 
-現在我們需要編寫 decodeToken 函數。
+(click) 
+
+然後我們需要編寫(1-3) decodeToken 函數。
 
 To make sure the user is authenticated, we need to decode the auth token in the API endpoint. If they are not authenticated, throw an error.
 
@@ -140,19 +142,18 @@ export async function decodeToken(token: string): Promise<DecodedIdToken> {
 
 
 <!-- 
-Read bullets
+Read 2 bullets
 
-- 初始化 firebase-admin
+- 初始化 firebase-admin (click)
 - 驗證和解碼 auth token
 
-這就是今天的代碼演練的全部內容:
+這就是今天的代碼介紹的全部內容:
 - 我們處理了我們的文件
 - 添加了前端搜索輸入
 - 添加了一個後端來回答問題
 - 最後使用 Firebase Auth 保護 API
 
-現在我們的搜索成功了，但對於像這樣的項目，我們可以採取(cǎiqǔ)一些合乎(héhū)邏輯(luójí)的後續步驟(bùzhòu)。
-
+English:
 - Initialize firebase-admin
 - Verify and decode the auth token
 
@@ -161,6 +162,5 @@ That's all for the code walkthrough today:
 - added a frontend search input
 - added a backend to answer questions
 - and secured everything with Firebase Authentication
-
-That will create a working tool, but there are some logical next steps we could take with a project like this... 
+ 
 -->

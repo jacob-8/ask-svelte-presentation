@@ -36,9 +36,9 @@ p {
 </style>
 
 <!--
-大家好! 今天我很高興給大家一個 AI 的介紹。 我很感謝**戴維廷**(Dài Wéitíng)給我這個機會。 大概 2004，我開始做網站。 到目前我還沒有關於這方面技術的演講經驗。 有一次我給一個演講關於技術，但我的觀眾不是程式人。 所以這是我第一次真的關於技術演講。我正在學習中文，所以我想，為什麼不用中文進行我第一次技術的演講呢？ 那以後如果我用英文演講的時候，我會覺得很容易。
+大家好! 我叫亞瀾. 今天我很高興給大家一個 AI 的介紹。 我很感謝 戴維廷(Dài Wéitíng) 給我這個機會。 大概 2004，我開始做網站。 到目前我還沒有關於這方面技術(jìshù)的演講經驗。 有一次我給一個演講關於技術，但我的觀眾不是程式人。 所以這是我第一次真的關於技術演講。我正在學習中文，所以我想，為什麼不用中文進行我第一次技術的演講呢？ 那以後如果我用英文演講的時候，我會覺得很容易。
 
-Before I start, I need to thank my wife, Liting, for her support and for being interested in what I've been building.
+在我開始之前，我需要感謝我太太麗婷(Lìtíng)，感謝她的支持還有興趣。
 
 那我們開始把。 我覺得你們已經知道怎麼用 ChatGPT，但你知道怎麼把 ChatGPT 放在自己的工具?
 
@@ -47,7 +47,7 @@ Before I start, I need to thank my wife, Liting, for her support and for being i
 
 ---
 layout: iframe-right
-url: https://kit.svelte.dev/docs/routing#server-receiving-data
+url: https://kit.svelte.dev
 ---
 
 # 搜索示範
@@ -58,7 +58,9 @@ url: https://kit.svelte.dev/docs/routing#server-receiving-data
 [polylingual.dev/zh-TW/search](https://polylingual.dev/zh-TW/search)
 </div>
 
-<!-- 首先，我會示範我構建的聰明的搜索引擎，然後如何構建它。Svelte 是一個 JavaScript 框架，還有你可以利用 SvelteKit 做厲害的 web 應用程式 (好像 NextJS)。 那 SvelteKit 沒有中文的文檔。 因為內容常常變化, 翻譯文檔很難。 這將不會再是問題。 使用我的工具，我們可以獲取英文文檔，用中文提出問題，然後得到有用的中文回答。 -->
+<!-- 首先，我會示範我構建的聰明的搜索引擎，然後怎麼構建它。Svelte 是一個 JavaScript 框架，還有你可以利用 SvelteKit 做厲害的 web 應用程式 (好像 NextJS)。 那 SvelteKit 沒有中文的文檔。 因為內容常常變化, 翻譯文檔很難。如果我的英文不太好怎麼辦學怎麼用 SvelteKit. 比如怎創建一個 API 路由.有一點難. demonstrate how to find*
+
+這將不會再是問題。 使用我的工具，我們可以獲取英文文檔，用中文提出問題，然後得到有用的中文答案。 -->
 
 ---
 layout: iframe-right
@@ -73,22 +75,25 @@ url: https://polylingual.dev/zh-TW/search
 
 95+ 語言: <span class="text-blue">**繁體中文**</span>、簡體中文、英語、日語、韓語、印度尼西亞語、西班牙語、法語、德語、阿拉伯語、荷蘭語、越南語、泰語、阿爾巴尼亞語、亞美尼亞語、阿瓦迪語、阿塞拜疆語、巴什基爾語、巴斯克語、白俄羅斯語、孟加拉語、博傑普爾語、波斯尼亞語、巴西語 葡萄牙語、保加利亞語、加泰羅尼亞語、恰蒂斯加爾希語、克羅地亞語、捷克語、丹麥語、多格里語、愛沙尼亞語、法羅語、芬蘭語、加利西亞語、格魯吉亞語、希臘語、古吉拉特語、哈里亞納語、印地語、匈牙利語、愛爾蘭語、意大利語、爪哇語、卡納達語、克什米爾語、邁蒂利語、馬來語、廣東話、吳語、等
 
-<!-- 讓我問幾個問題。 最後我會讓你們試試看，所以如果你有使用 SvelteKit、NextJS、Nuxt、Astro 或任何 JavaScript 框架的經驗，請開始考慮你想問什麼問題。
+<!-- 讓我問幾個問題。 
+
+1. How do I create a page route? 如何創建頁面路由？
+2. What is the difference between Svelte and SvelteKit? Svelte 和 SvelteKit 有什麼不同？
+3. What are snapshots?, 什麼是快照？, 什麼是 snapshots？, 什麼是快照？ 請舉個例子
+
+最後我會讓你們試試看，所以如果你有使用 SvelteKit、NextJS、Nuxt、Astro 或任何 JavaScript 框架的經驗，請開始考慮你想問什麼問題。
 
 Demo questions:
-1. How do I create a page route? 如何創建頁面路由？
-2. How do I create an api? 如何創建 api？, 如何創建 api？ 告訴我如何在我的應用程序中使用它
-3. What are snapshots?, 什麼是快照？, 什麼是 snapshots？, 什麼是快照？ 請舉個例子
-4. What is the difference between Svelte and SvelteKit? Svelte 和 SvelteKit 有什麼不同？
-5. How do I create a layout reset?, 如何創建佈局重置？
-6. tell me about layout resets, 告訴我關於 layout resets, 告訴我關於 layout resets 並給我一個例子
-7. What is the +error file?, +error 文件是什麼？
-8. What is SvelteKit useful for? SvelteKit 有什麼用？
-9. How do you write links? 如何寫鏈接？
-10. What is a route matcher? How do I create a route matcher? // no longer works: How do I create a route matcher for the values "es" and "de"?
-11. How do I restrict a route to certain parameters? 如何限制路由的某些參數？
-12. Funny: Who created SvelteKit? 誰創造了 SvelteKit？
-13. Can't help: How do you spin routes backwards? 如何反向旋轉路由？
+1. How do I create an api? 如何創建 api？, 如何創建 api？ 告訴我如何在我的應用程式中使用它
+2. How do I create a layout reset?, 如何創建佈局重置？
+3. tell me about layout resets, 告訴我關於 layout resets, 告訴我關於 layout resets 並給我一個例子
+4. What is the +error file?, +error 文件是什麼？
+5. What is SvelteKit useful for? SvelteKit 有什麼用？
+6. How do you write links? 如何寫鏈接？
+7.  What is a route matcher? How do I create a route matcher? // no longer works: How do I create a route matcher for the values "es" and "de"?
+8.  How do I restrict a route to certain parameters? 如何限制路由的某些參數？
+9.  Funny: Who created SvelteKit? 誰創造了 SvelteKit？
+10. Can't help: How do you spin routes backwards? 如何反向旋轉路由？
 
 [95 languages source](https://seo.ai/blog/how-many-languages-does-chatgpt-support) -->
 
@@ -116,7 +121,7 @@ h1 {
 
 READ 3 bullets. 
 
-你唯一的限制是你的想像力。-->
+你只有一個限制:你的想像力。-->
 
 ---
 
@@ -124,7 +129,7 @@ READ 3 bullets.
 
 <v-clicks>
 
-- <clarity-process-on-vm-line inline /> 把文檔預處理成小部分 <!-- Preprocess documentation into small sections -->
+- <clarity-process-on-vm-line inline /> 把文檔預先處理成小部分 <!-- Preprocess documentation into small sections -->
 - <carbon-3d-print-mesh /> 使用 OpenAI 創建 embeddings <!-- Create embeddings using OpenAI -->
 - <carbon-search /> 前端：添加搜索輸入 <!-- Add a search box to the front end -->
 - <carbon-bare-metal-server /> 後端：創建 SvelteKit API 端點 <!-- Create SvelteKit back-end API endpoint  -->
@@ -143,7 +148,9 @@ li {
 }
 </style>
 
-<!-- 首先... -->
+<!-- 首先...
+
+chuánshū -->
 
 ---
 src: ./pages/preprocess.md
@@ -155,10 +162,6 @@ src: ./pages/what-are-embeddings.md
 
 ---
 src: ./pages/create-embeddings.md
----
-
----
-src: ./pages/embedding-costs.md
 ---
 
 ---
@@ -194,9 +197,16 @@ li {
 </style>
 
 <!-- 
-1. ...所以使用者可以查看他們的歷史
-2. ...了解使用者或收取使用費
-3. 如果你的知識庫很大並且你想快速檢索最相關的文檔部分，你可以... -->
+現在我們的搜索成功了，但對於像這樣的項目，我們可以採取(cǎiqǔ)一些合乎(héhū)邏輯(luójí)的後續步驟(bùzhòu)。
+
+(click and read bullets)
+
+- ...所以使用者可以查看他們的歷史
+- ...了解使用者或收取使用費
+- 如果你的知識庫很大並且你想快速檢索(jiǎnsuǒ)最相關的文檔部分，你可以... 
+
+That will create a working tool, but there are some logical next steps we could take with a project like this...
+-->
 
 ---
 
@@ -212,7 +222,7 @@ li {
 - [Perform Semantic Search on a Postgres database](https://nnext.ai/wiki/Introducing-pgvector---Perform-Semantic-Search-on-a-Postgres-database-e114fca6811c4583a6d516eca80ff42b)
 - [sqlite-vss: A SQLite Extension for Vector Search](https://observablehq.com/@asg017/introducing-sqlite-vss)
 
-<!-- 那, 因為你了解了搜索工具，當你有空，我希望你能花一些時間來探索(tànsuǒ)源代碼和親自試試一下。 我會在 TOOCON Facebook 頁面上發布這個 Slidev PPT，你可以用這些(liànjiē)查看我的項目的源代碼或閱讀這些有用的文章。 -->
+<!-- 那, 因為從這個工具你剛剛獲得一些知識，當你有空，我希望你能花一些時間來探索(tànsuǒ)源代碼和親自試試一下。 明天我會在 TOOCON Facebook 頁面上發布這個 Slidev PPT，你可以用這些鏈接(liànjiē)查看我的項目的源代碼或閱讀這些有用的文章。 -->
 
 ---
 
@@ -242,7 +252,7 @@ liánxì
 
 Demo questions:
 1. How do I create a page route? 如何創建頁面路由？
-2. How do I create an api? 如何創建 api？, 如何創建 api？ 告訴我如何在我的應用程序中使用它
+2. How do I create an api? 如何創建 api？, 如何創建 api？ 告訴我如何在我的應用程式中使用它
 3. What are snapshots?, 什麼是快照？, 什麼是 snapshots？, 什麼是快照？ 請舉個例子
 4. What is the difference between Svelte and SvelteKit? Svelte 和 SvelteKit 有什麼不同？
 5. How do I create a layout reset?, 如何創建佈局重置？
@@ -254,6 +264,7 @@ Demo questions:
 11. How do I restrict a route to certain parameters? 如何限制路由的某些參數？
 12. Funny: Who created SvelteKit? 誰創造了 SvelteKit？
 13. Can't help: How do you spin routes backwards? 如何反向旋轉路由？
+14. Half right, half wrong: Tell me about .env variable files >> 跟 ChatGPT 這個工具有一樣的弱點, 缺點。有時候寫錯,所以我會加文檔源鏈接。
 
 -->
 
