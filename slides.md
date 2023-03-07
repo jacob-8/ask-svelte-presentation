@@ -268,4 +268,7 @@ Demo questions:
 
 -->
 
+
+---
+src: ./pages/embedding-costs.md
 ---
