@@ -16,8 +16,8 @@ css: unocss
 以任何語言來使用 AI 搜索知識庫 <!-- Use AI to search a knowledge knowledge using any language -->
 
 <div class="pt-12">
-  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    按空格鍵下一頁 <!-- Press Space for next page  -->
+  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer text-gray-400" hover="bg-white/10">
+    按空格鍵 <!-- Press Space for next page  -->
     <carbon:arrow-right class="inline"/>
   </span>
 </div>
@@ -31,12 +31,14 @@ css: unocss
 
 <style>
 p {
-  font-size: 150%;
+  font-size: 210%;
 }
 </style>
 
 <!--
 大家好! 今天我很高興給大家一個 AI 的介紹。 我很感謝**戴維廷**(Dài Wéitíng)給我這個機會。 大概 2004，我開始做網站。 到目前我還沒有關於這方面技術的演講經驗。 有一次我給一個演講關於技術，但我的觀眾不是程式人。 所以這是我第一次真的關於技術演講。我正在學習中文，所以我想，為什麼不用中文進行我第一次技術的演講呢？ 那以後如果我用英文演講的時候，我會覺得很容易。
+
+Before I start, I need to thank my wife, Liting, for her support and for being interested in what I've been building.
 
 那我們開始把。 我覺得你們已經知道怎麼用 ChatGPT，但你知道怎麼把 ChatGPT 放在自己的工具?
 
@@ -44,21 +46,23 @@ p {
 -->
 
 ---
+layout: iframe-right
+url: https://kit.svelte.dev/docs/routing#server-receiving-data
+---
 
 # 搜索示範
 
-<div grid="~ cols-2 gap-2">
-<img m="y-10" border="rounded" src="/favorite-zh.png">
-<img m="y-10" border="rounded" src="/what-is-svelte.png">
-</div>
+<div overflow-x-scroll h-450px v-click>
+<img m="y-10" border="rounded" src="/samples/how-do-i-create-an-api_zh.png">
 
 [polylingual.dev/zh-TW/search](https://polylingual.dev/zh-TW/search)
+</div>
 
 <!-- 首先，我會示範我構建的聰明的搜索引擎，然後如何構建它。Svelte 是一個 JavaScript 框架，還有你可以利用 SvelteKit 做厲害的 web 應用程式 (好像 NextJS)。 那 SvelteKit 沒有中文的文檔。 因為內容常常變化, 翻譯文檔很難。 這將不會再是問題。 使用我的工具，我們可以獲取英文文檔，用中文提出問題，然後得到有用的中文回答。 -->
 
 ---
 layout: iframe-right
-url: https://polylingual.dev
+url: https://polylingual.dev/zh-TW/search
 ---
 
 # 搜索示範 <!-- Search Demo -->
@@ -72,9 +76,19 @@ url: https://polylingual.dev
 <!-- 讓我問幾個問題。 最後我會讓你們試試看，所以如果你有使用 SvelteKit、NextJS、Nuxt、Astro 或任何 JavaScript 框架的經驗，請開始考慮你想問什麼問題。
 
 Demo questions:
-1. How do I create a route matcher?
-   - How do I create a route matcher for the values "es" and "de"?
-2. TODO
+1. How do I create a page route? 如何創建頁面路由？
+2. How do I create an api? 如何創建 api？, 如何創建 api？ 告訴我如何在我的應用程序中使用它
+3. What are snapshots?, 什麼是快照？, 什麼是 snapshots？, 什麼是快照？ 請舉個例子
+4. What is the difference between Svelte and SvelteKit? Svelte 和 SvelteKit 有什麼不同？
+5. How do I create a layout reset?, 如何創建佈局重置？
+6. tell me about layout resets, 告訴我關於 layout resets, 告訴我關於 layout resets 並給我一個例子
+7. What is the +error file?, +error 文件是什麼？
+8. What is SvelteKit useful for? SvelteKit 有什麼用？
+9. How do you write links? 如何寫鏈接？
+10. What is a route matcher? How do I create a route matcher? // no longer works: How do I create a route matcher for the values "es" and "de"?
+11. How do I restrict a route to certain parameters? 如何限制路由的某些參數？
+12. Funny: Who created SvelteKit? 誰創造了 SvelteKit？
+13. Can't help: How do you spin routes backwards? 如何反向旋轉路由？
 
 [95 languages source](https://seo.ai/blog/how-many-languages-does-chatgpt-support) -->
 
@@ -206,7 +220,7 @@ li {
 
 ---
 layout: iframe-right
-url: https://polylingual.dev
+url: https://polylingual.dev/zh-TW/search
 ---
 
 # 有問題嗎?
@@ -224,6 +238,23 @@ url: https://polylingual.dev
 
 <!-- 掃描(sǎomiáo) QR code 進入我的 Facebook 社團。你會看到一個討論區，請把你的問題放在那邊(用中文)。然後我會把你的問題放在這個輸入所以我們可以一起問 SvelteKit.
 
-liánxì -->
+liánxì 
+
+Demo questions:
+1. How do I create a page route? 如何創建頁面路由？
+2. How do I create an api? 如何創建 api？, 如何創建 api？ 告訴我如何在我的應用程序中使用它
+3. What are snapshots?, 什麼是快照？, 什麼是 snapshots？, 什麼是快照？ 請舉個例子
+4. What is the difference between Svelte and SvelteKit? Svelte 和 SvelteKit 有什麼不同？
+5. How do I create a layout reset?, 如何創建佈局重置？
+6. tell me about layout resets, 告訴我關於 layout resets, 告訴我關於 layout resets 並給我一個例子
+7. What is the +error file?, +error 文件是什麼？
+8. What is SvelteKit useful for? SvelteKit 有什麼用？
+9. How do you write links? 如何寫鏈接？
+10. What is a route matcher? How do I create a route matcher? // no longer works: How do I create a route matcher for the values "es" and "de"?
+11. How do I restrict a route to certain parameters? 如何限制路由的某些參數？
+12. Funny: Who created SvelteKit? 誰創造了 SvelteKit？
+13. Can't help: How do you spin routes backwards? 如何反向旋轉路由？
+
+-->
 
 ---

@@ -103,7 +103,6 @@ async function add_embeddings(sections: Section[]): Promise<Section[]> {
   - 使用 OpenAi 的 embedding API
   - 請注意，我們在請求之間等待 2 秒，免得請求速度過太快而發生錯誤。
 - 在我的項目中，我把這些處理過的部分儲存到 CSV 文件中。 在包含許多文檔的生產應用程序中，你可能希望把它們儲存在矢量數據庫中，然後我會分享一些建議的矢量數據庫。
-- 那麼什麼是 embeddings?
 
 Here is a simplified version of the process I run for every markdown file in the SvelteKit documentation.
 - Read the file contents
@@ -114,4 +113,14 @@ Here is a simplified version of the process I run for every markdown file in the
   - using OpenAI's Embeddings endpoint
   - with an important pause after each request to avoid errors for making requests too many requests at once
 - In my project, I take these processed sections and save them to a CSV. In a production application with many documents, you would want store them in vector database and I will share links to suggestions later.
-- So what is an embedding? -->
+-->
+
+---
+
+## CSV 結果
+
+<img m="y-5" border="rounded" src="/csv-data.png">
+
+<!-- 那麼什麼是 embeddings? 
+
+So what is an embedding? -->

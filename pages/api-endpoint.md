@@ -18,7 +18,7 @@
 </li>
 </ul>
 
-```ts {1,3,18|4-5|2,6-7|8-9|8-9|10-12|13|17}
+```ts {1,3,18|4-5|2,6-7|8,11-14|9-10|15|19}
 // src/routes/api/query/+server.ts
 const MAX_DOCS_TO_RETURN = 10;
 export const POST: RequestHandler = async ({ request, fetch }) => {
@@ -27,10 +27,12 @@ export const POST: RequestHandler = async ({ request, fetch }) => {
   const doc_sections = await load_doc_sections('sveltejs.kit/docs.csv', fetch)
   const nearest_matches = find_closest_embeddings_cosine(query_embedding, doc_sections, MAX_DOCS_TO_RETURN)
   const document_context = concat_matched_documents(nearest_documents)
-  const prompt = generate_prompt(document_context, query)
   const completionResponse = await openai.createCompletion({
     model: 'gpt-3.5-turbo',
-    prompt,
+    messages: [
+        { role: 'system', content: system_message },
+        { role: 'user', content: generate_user_prompt(document_context, query) },
+      ],
     max_tokens: 1000,
     temperature: 0,
   })
@@ -51,10 +53,12 @@ function cosine_similarity(a: number[], b: number[]): number {
 ```
 </div>
 
-<div fixed top-2 left-10 right-10 border="~ green" shadow v-if="$slidev.nav.clicks === 4">
+<div fixed top-2 left-10 right-10 border="~ green" shadow v-if="$slidev.nav.clicks === 3">
 ```ts
-function generate_prompt(document_context: string, query: string)
-  return `You love to help people understand how to use Svelte and SvelteKit to build full-stack websites. Given the following context sections from various documentation sites, answer the question using only that information, outputted in markdown format. If you are unsure and the answer is not explicitly written in the context sections, say "Sorry, I don't know how to help with that."
+const system_message = "You love to help people understand how to use Svelte and SvelteKit to build full-stack websites.";
+
+function generate_user_prompt(document_context: string, query: string)
+  return `Given the following context sections, answer the question using only that information, written in markdown format. If you are unsure and the answer is not explicitly written in the context sections, say "Sorry, I don't know how to help with that."
 
 Context sections:
 ${document_context}
