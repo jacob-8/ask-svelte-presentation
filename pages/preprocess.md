@@ -113,7 +113,7 @@ Here is a simplified version of the process I run for every markdown file in the
 - Then I generate an embedding for each section...
   - using OpenAI's Embeddings endpoint
   - with an important pause after each request to avoid errors for making requests too many requests at once
-- In my project, I take these processed sections and save them to a CSV. In a production application with many documents, you would want store them in vector database and I will share links to suggestions later.
+- In my project, I take these processed sections and save them to a CSV. 
 -->
 
 ---
@@ -126,5 +126,7 @@ Here is a simplified version of the process I run for every markdown file in the
 在包含許多文檔的生產應用程式中，你可能希望把它們儲存在矢量數據庫中，然後我會分享一些建議的矢量數據庫。
 
 那麼 embeddings 什麼是 ? 
+
+In a production application with many documents, you would want store them in vector database and I will share links to suggestions later.
 
 So what is an embedding? -->

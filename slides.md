@@ -42,7 +42,7 @@ p {
 
 那我們開始把。 我覺得你們已經知道怎麼用 ChatGPT，但你知道怎麼把 ChatGPT 放在自己的工具?
 
-今天我會幫助你了解我如何使用 OpenAI 和 SvelteKit 為 Svelte 文檔網站構建類似 ChatGPT 的多語言對話搜索。還有了解我如何使用 Firebase Auth 保護我的 API。最後我希望你獲得一些關於如何使用 Firebase 為你自己或你的公司創建多語言搜索工具的想法。
+今天我會幫助你了解我如何使用 OpenAI 和 SvelteKit 為 SvelteKit 文檔網站構建類似 ChatGPT 的多語言對話搜索。還有了解我如何使用 Firebase Auth 保護我的 API。最後我希望你獲得一些關於如何使用 Firebase 為你自己或你的公司創建多語言搜索工具的想法。
 -->
 
 ---
@@ -58,7 +58,7 @@ url: https://kit.svelte.dev
 [polylingual.dev/zh-TW/search](https://polylingual.dev/zh-TW/search)
 </div>
 
-<!-- 首先，我會示範我構建的聰明的搜索引擎，然後怎麼構建它。Svelte 是一個 JavaScript 框架，還有你可以利用 SvelteKit 做厲害的 web 應用程式 (好像 NextJS)。 那 SvelteKit 沒有中文的文檔。 因為內容常常變化, 翻譯文檔很難。如果我的英文不太好怎麼辦學怎麼用 SvelteKit. 比如怎創建一個 API 路由.有一點難. demonstrate how to find*
+<!-- 首先，我會示範我構建的聰明的搜索引擎，然後怎麼構建它。Svelte 是一個 JavaScript 框架，還有你可以利用 SvelteKit 做厲害的 web 應用程式 (好像 NextJS)。 那 SvelteKit 沒有中文的文檔。 因為內容常常變化, 翻譯文檔很難。如果我的英文不太好怎麼辦學怎麼用 SvelteKit. 比如怎創建一個 API 路由.有一點難找到. demonstrate how to find*
 
 這將不會再是問題。 使用我的工具，我們可以獲取英文文檔，用中文提出問題，然後得到有用的中文答案。 -->
 
@@ -138,7 +138,7 @@ READ 3 bullets.
   - <carbon-chat /> 把相關文檔部分和使用者的問題發送給 OpenAI <!-- Send relevant documentation and user's question to OpenAI -->
   - <fluent-stream-output-20-regular /> 把答案流式傳輸給使用者 <!-- Stream answer back to user -->
 - <mdi-message-text-fast-outline /> 前端：示範答案 <!--Show answer-->
-- <logos-firebase/> 使用 Firebase Auth 保護 API <!-- Secure your API with Firebase Auth -->
+- <logos-firebase /> 使用 Firebase Auth 保護 API <!-- Secure your API with Firebase Auth -->
 
 </v-clicks>
 
@@ -184,7 +184,7 @@ src: ./pages/secure-with-firebase.md
 
 - <logos-firebase/> 把問題和答案保儲存到 Firestore
 - <uil-tachometer-fast/> 計數使用
-- <carbon-3d-print-mesh /> 使用 embeddings 搜索引擎 
+- <carbon-3d-print-mesh /> 使用 embeddings 矢量數據庫 
   - [Google Cloud Matching Engine Vertex AI](https://cloud.google.com/blog/topics/developers-practitioners/find-anything-blazingly-fast-googles-vector-search-technology) 
   - 任何 [OpenAI 建議的矢量數據庫](https://platform.openai.com/docs/guides/embeddings/how-can-i-retrieve-k-nearest-embedding-vectors-quickly)
 
