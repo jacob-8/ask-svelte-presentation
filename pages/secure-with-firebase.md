@@ -134,9 +134,7 @@ export async function decodeToken(token: string): Promise<DecodedIdToken> {
 創建一個新的 firebase-admin service account key
 </li>
 <li v-if="$slidev.nav.clicks > 0">
-安裝 firebase-admin: `npm install -D firebase-admin`</li>
-<li v-if="$slidev.nav.clicks > 2">
-<carbon-chat /> 把相關文檔部分和使用者的問題發送給 OpenAI <!-- Send relevant documentation and user's question to OpenAI -->
+安裝 firebase-admin: `npm install -D firebase-admin`
 </li>
 </ul>
 
